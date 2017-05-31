@@ -2,7 +2,7 @@ import React from 'react';
 import {browserHistory} from 'react-router';
 
 
-export default class Hello extends React.Component {
+export default class Login extends React.Component {
     onLogin(){
         this.props.onLogin();
 

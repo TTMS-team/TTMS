@@ -1,6 +1,6 @@
-export default (state = {tip: ""}, action) => {
-    if(action.type === 'GET_LOGIN_TIP') {
-        state.tip = action.data;
+export default (state = {films:[]}, action) => {
+    if(action.type === "SHOW_FILMS_LIST") {
+        state.films = action.data;
         return Object.assign({}, state);
     }
     return state;

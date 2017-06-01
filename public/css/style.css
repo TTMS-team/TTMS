@@ -1,0 +1,48 @@
+#title
+{
+    height: 62px;
+    overflow: hidden;
+    border-bottom: 1px solid #d6dfea;
+    background: #eff4fa;
+}
+#username
+{
+    border:1px solid #a1a1a1;
+    padding:20px 20px;
+    width:225px;
+    height : 10px;
+    border-radius:20px;
+    margin-top: 100px;
+    margin-left: 60px;
+    font-size:12px;
+}
+#pass
+{
+    border:1px solid #a1a1a1;
+    padding:20px 20px;
+    width:225px;
+    height : 10px;
+    border-radius:20px;
+    margin-left: 60px;
+    margin-top: 20px;
+    font-size:12px;
+}
+#login
+{
+    float:right;
+    width:400px;
+    height: 350px;
+    border:1px solid #a1a1a1;
+    margin-right:100px;
+    margin-top: 100px;
+}
+#submit
+{
+    border:1px solid #a1a1a1;
+    padding:20px 20px;
+    width:265px;
+    height : 50px;
+    border-radius:20px;
+    margin-left: 60px;
+    margin-top: 20px;
+}

@@ -1,18 +1,18 @@
-// import AdminPage from "../components/adminPage";
-// import {connect} from "react-redux";
-//
-// const mapStateToProps = (state) => {
-//     return {
-//
-//     }
-// };
-//
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//          getFilms:()=>{
-//              dispatch({type:"GET_FILMS_LIST"});
-//          }
-//     };
-// };
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(AdminPage);
+import AdminPage from "../components/adminPage";
+import {connect} from "react-redux";
+
+const mapStateToProps = (state) => {
+    return {
+       presentShow:state.adminPage.presentShow
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getPresentShow:(target)=>{
+             dispatch({type:"GET_PRESENT_SHOW",target});
+         }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminPage);

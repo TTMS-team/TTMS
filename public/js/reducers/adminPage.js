@@ -1,6 +1,6 @@
-export default (state = {tip: ""}, action) => {
-    if(action.type === 'GET_LOGIN_TIP') {
-        state.tip = action.data;
+export default (state = {presentShow: ""}, action) => {
+    if(action.type === 'GET_PRESENT_SHOW') {
+        state.presentShow = action.target;
         return Object.assign({}, state);
     }
     return state;

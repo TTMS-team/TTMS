@@ -15,7 +15,6 @@ app.get("/login",login);
 
 app.get("/getFilmsList",function (req,res) {
     //film:[{filmName:xx,duration,type,director,language}...]
-
     res.json([{play_id:"11111",play_type_id:"22222",play_lang_id:"33333",
         play_name:"西游记",play_introduction:"55555",play_length:"kk",
         play_ticket_price:"",play_status:"jj"}

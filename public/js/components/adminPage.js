@@ -31,6 +31,7 @@ export default class AdminPage extends React.Component {
             case "employee":
                 p=<Employee getEmployeeList={this.props.getEmployeeList} employeeList={this.props.employeeList} deleteTip={this.props.deleteTip}/>;
                 break;
+
         }
 
         return <div>

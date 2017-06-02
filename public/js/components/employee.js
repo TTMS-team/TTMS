@@ -26,7 +26,7 @@ export default class Employee extends React.Component {
     }
 
     addEmployee(){
-
+        browserHistory.push('/addEmployee');
     }
 
     render() {
@@ -38,7 +38,7 @@ export default class Employee extends React.Component {
                 <span>{value.emp_age}</span>
                 <span>{value.emp_position}</span>
                 <span>{value.emp_tel_num}</span>
-                <input type="button" value="修改"  onClick={this.modifyEmployee.bind(this,value.emp_id)}/>
+                <Link to={`/modifyEmployee?id=${value.emp_id}`}><input type="button" value="修改"  onClick={this.modifyEmployee.bind(this,value.emp_id)}/></Link>
                 <input type="button" value="删除" onClick={this.deleteEmployee.bind(this,value.emp_id)}/>
             </div>
         });

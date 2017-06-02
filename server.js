@@ -2,11 +2,14 @@ const express=require("express");
 const app=express();
 const path = require('path');
 var request = require("request");
+const bodyParser = require('body-parser');
 
 
 const login=require('./routes/login');
 
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.get("/",function (req,res) {
@@ -34,6 +37,12 @@ app.get("/getEmployeeList",function (req,res) {
         }
     });
 
+});
+
+//添加员工
+app.post('/addEmployee',function (req,res) {
+    var info=req.body;
+    console.log(info);
 });
 
 //根据id删除员工

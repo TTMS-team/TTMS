@@ -10,15 +10,17 @@ import middlewareAdminPage from './middlewares/adminPage';
 import middlewareConductorPage from './middlewares/conductorPage';
 import middlewareSchedulePage from './middlewares/schedulePage';
 import middlewareSeatPage from './middlewares/seatPage';
+import middlewareEmployee from './middlewares/employee';
 
 import AdminPage from './containers/adminPage';
 import Login from './containers/login';
 import ConductorPage from './containers/conductorPage';
 import SchedulePage from './containers/schedulePage';
 import SeatPage from './containers/seatPage';
+// import Employee from './containers/employee';
 
 
-const createMiddlewareStore = applyMiddleware(middlewareLogin,middlewareAdminPage,middlewareConductorPage,middlewareSchedulePage,middlewareSeatPage)(createStore);
+const createMiddlewareStore = applyMiddleware(middlewareLogin,middlewareAdminPage,middlewareConductorPage,middlewareSchedulePage,middlewareSeatPage,middlewareEmployee)(createStore);
 
 const store = createMiddlewareStore(reducer);
 

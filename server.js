@@ -1,6 +1,8 @@
 const express=require("express");
 const app=express();
 const path = require('path');
+var request = require("request");
+
 
 const login=require('./routes/login');
 
@@ -11,7 +13,48 @@ app.get("/",function (req,res) {
     res.sendfile('index.html');
 });
 
+
 app.get("/login",login);
+
+//获取全体员工数组
+app.get("/getEmployeeList",function (req,res) {
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/employee/EmployeeQueryAll'
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            res.json(resData);
+
+        } else {
+            console.log(err);
+            
+        }
+    });
+
+});
+
+//根据id删除员工
+app.get("/deleteEmployee/:id",function (req,res) {
+    var emp_id=req.params.id;
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/employee/EmployeeQueryAll'
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            res.json(resData);
+
+        } else {
+            console.log(err);
+
+        }
+    });
+})
 
 app.get("/getFilmsList",function (req,res) {
     //film:[{filmName:xx,duration,type,director,language}...]
@@ -29,6 +72,7 @@ app.get("/getSchedule/:id",function (req,res) {
     res.json([{studio_name:"",time_id:"",sched_ticket_price:"",play_length:""}])
 
 });
+
 
 //根据studio_id查找座位信息
 app.get("/getSeatsList/:id",function (req,res) {

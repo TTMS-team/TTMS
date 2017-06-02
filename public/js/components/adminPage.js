@@ -15,7 +15,7 @@ export default class AdminPage extends React.Component {
 
     render() {
 
-        var p=<Schedule/>;
+        var p=<Schedule />;
         switch (this.props.presentShow){
             case "schedule":
                 p=<Schedule/>;
@@ -30,7 +30,7 @@ export default class AdminPage extends React.Component {
                 p=<Ticket/>;
                 break;
             case "employee":
-                p=<Employee/>;
+                p=<Employee getEmployeeList={this.props.getEmployeeList} employeeList={this.props.employeeList} deleteTip={this.props.deleteTip}/>;
                 break;
         }
 

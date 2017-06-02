@@ -26,10 +26,12 @@ export default class Login extends React.Component {
     }
     
     render() {
-        return <div id="login">
+        return <div className="back">
+            <div id="login">
                 <input type="text" id="username" ref="userName" placeholder="用户名"/>
                 <input type="password" id="pass"  ref ="passWord" placeholder="密码"/>
                 <button onClick={this.onLogin.bind(this)}id="submit">登录</button>
-        </div>
+            </div>
+            </div>
     }
 }

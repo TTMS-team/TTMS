@@ -1,3 +1,4 @@
+require ('../../css/style.css');
 import React from 'react';
 import {browserHistory} from 'react-router';
 
@@ -10,10 +11,10 @@ export default class Employee extends React.Component {
 
     render() {
        
-        return <div>
+        return <div className="mainView">
             <div>
-                <input type="text"/>
-                <button>查询</button>
+                <input type="text" className="search" />
+                <button className="searchButton">查询</button>
             </div>
             <div>
                 <div>

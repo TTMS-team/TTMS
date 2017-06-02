@@ -5,7 +5,7 @@ import {browserHistory} from 'react-router';
 export default class Studio extends React.Component {
    
     render() {
-        return <div>
+        return <div className="mainView">
             演出厅
         </div>
     }

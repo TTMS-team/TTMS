@@ -1,3 +1,4 @@
+require ('../../css/style.css');
 import React from 'react';
 import Title from './title';
 import Employee from './employee';
@@ -36,8 +37,8 @@ export default class AdminPage extends React.Component {
 
         return <div>
             <Title username={this.props.username}/>
-            <ul id="aside" onClick={this.onAside.bind(this)}>
-               <li className="schedule">演出计划</li>
+            <ul id="aside" onClick={this.onAside.bind(this)} >
+               <li className="schedule" >演出计划</li>
                <li className="play">剧目管理</li>
                <li className="studio">演出厅管理</li>
                <li className="ticket">票务管理</li>

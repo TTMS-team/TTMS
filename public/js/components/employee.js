@@ -9,6 +9,7 @@ export default class Employee extends React.Component {
         this.props.getEmployeeList();
     }
 
+<<<<<<< HEAD
     searchEmployee(){
 
     }
@@ -27,6 +28,9 @@ export default class Employee extends React.Component {
 
     addEmployee(){
         browserHistory.push('/addEmployee');
+=======
+    searchEmployee() {
+>>>>>>> 0daa65160af1ded128b94bda49528ea13e8a5f30
     }
 
     render() {
@@ -43,7 +47,7 @@ export default class Employee extends React.Component {
             </div>
         });
         
-        return <div>
+        return <div className="mainView">
             <div>
                     <input type="text"/>
                     <button onClick={this.searchEmployee.bind(this)}>查询</button>

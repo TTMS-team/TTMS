@@ -42,23 +42,38 @@ app.get("/getEmployeeList",function (req,res) {
 //添加员工
 app.post('/addEmployee',function (req,res) {
     var info=req.body;   //数据可传递
-
     console.log(info);
-});
-
-//根据id删除员工
-app.get("/deleteEmployee/:id",function (req,res) {
-    var emp_id=req.params.id;
+    //http://115.159.82.119:8080/Movie/employee/EmployeeAdd?name=li&password=123&position=1
     var resData=[];
     var options = {
         method: 'GET',
-        url: 'http://115.159.82.119:8080/Movie/employee/EmployeeQueryAll'
+        url: 'http://115.159.82.119:8080/Movie/employee/EmployeeAdd?name='+info.emp_name+'&password='+info.emp_password+'&position='+info.emp_position
     };
     request(options,function (err,response,body) {
         if (response) {
             resData=body;
             res.json(resData);
+        } else {
+            console.log(err);
 
+        }
+    });
+
+});
+
+//根据id删除员工
+app.get("/deleteEmployee/:id",function (req,res) {
+    var emp_id=req.params.id;
+    // console.log(emp_id)
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/employee/EmployeeDelete?id='+emp_id
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            res.json(resData);
         } else {
             console.log(err);
 

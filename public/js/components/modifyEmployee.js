@@ -8,22 +8,18 @@ export default class ModifyEmployee extends React.Component {
 
 
     addEmployee(){
-        // var info= {"emp_addr":this.refs.emp_addr.value,
-        //     "emp_age":this.refs.emp_age.value,
-        //     "emp_email":this.refs.emp_email.value
-        //     ,"emp_holiday":this.refs.emp_holiday.value,
-        //     "emp_image":this.refs.emp_image.value,
-        //     "emp_induction_time":this.refs.emp_induction_time.value,
-        //     "emp_month_money":this.refs.emp_month_money.value,
-        //     "emp_name":this.refs.emp_name.value,
-        //     "emp_password":this.refs.emp_password.value,
-        //     "emp_position":this.refs.emp_position.value,
-        //     "emp_sex":this.refs.emp_sex.value,
-        //     "emp_sum_money":this.refs.emp_sum_money.value,
-        //     "emp_tel_num":this.refs.emp_tel_num.value};
-        var a=this.refs.emp_addr.value.trim();
-        console.log(a);
-        // this.props.addEmployee(info);
+        var info= {"emp_addr":this.refs.emp_addr.value,
+            "emp_age":this.refs.emp_age.value,
+            "emp_email":this.refs.emp_email.value
+            ,"emp_holiday":this.refs.emp_holiday.value,
+            "emp_induction_time":this.refs.emp_induction_time.value,
+            "emp_month_money":this.refs.emp_month_money.value,
+            "emp_name":this.refs.emp_name.value,
+            "emp_password":this.refs.emp_password.value,
+            "emp_position":this.refs.emp_position.value,
+            "emp_sex":this.refs.emp_sex.value,
+            "emp_sum_money":this.refs.emp_sum_money.value,
+            "emp_tel_num":this.refs.emp_tel_num.value};
     }
 
     render() {
@@ -47,7 +43,6 @@ export default class ModifyEmployee extends React.Component {
             <label>入职日期</label><input type="text" ref="emp_induction_time"/>
 
             <button onClick={this.addEmployee.bind(this)}>确认修改</button>
-
         </div>
     }
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
+
 
 export default class AddEmployee extends React.Component {
     addEmployee(){
@@ -17,6 +19,15 @@ export default class AddEmployee extends React.Component {
         this.props.addEmployee(info);
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.addEmployeeTip) {
+            browserHistory.push('/adminPage');
+        } else {
+            alert("添加失败！");
+        }
+    }
+
+    
     render() {
 
         return <div>

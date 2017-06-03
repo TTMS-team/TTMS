@@ -21,12 +21,16 @@ export default class Employee extends React.Component {
     }
 
     deleteEmployee(emp_id){  //finished
-        // this.props.deleteEmploy(emp_id);
-        // if(this.props.deleteTip===true){
-        //     this.props.getEmployeeList();
-        // }
+        this.props.deleteEmployee(emp_id);
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.deleteTip) {
+            this.props.getEmployeeList();
+            alert("删除成功！")
+        } 
+    }
+    
     addEmployee(){
         browserHistory.push('/addEmployee');
     }

@@ -5,7 +5,7 @@ const mapStateToProps = (state) => {
     return {
        presentShow:state.adminPage.presentShow,
         employeeList:state.employee.employeeList,
-        // deleteTip:state.employeeList.deleteTip
+        deleteTip:state.employee.deleteTip
     }
 };
 

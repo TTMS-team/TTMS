@@ -10,6 +10,7 @@ export default store => next => action => {
         request.post(`/addEmployee`)
             .send(action.info)
             .end((err, res) => {
+                // console.log(typeof res.body)
                 next({type:"GET_ADD_EMPLOYEE_TIP", data: res.body});
             });
     }

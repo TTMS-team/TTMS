@@ -33,7 +33,7 @@ app.get("/getEmployeeList",function (req,res) {
 
         } else {
             console.log(err);
-            
+
         }
     });
 
@@ -68,10 +68,60 @@ app.get("/deleteEmployee/:id",function (req,res) {
 
 //根据id查找员工
 app.get("/searchEmployee/:id",function(req,res){
-   var emp_id=req.params.id; //id输出成功
+    var emp_id=req.params.id; //id输出成功
 });
 
+//获取全部剧目数组
+app.get("/getPlayList",function (req,res) {
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/play/playQueryAll'
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            res.json(resData);
 
+        } else {
+            console.log(err);
+
+        }
+    });
+
+});
+
+//添加剧目
+app.post('/addPlay',function (req,res) {
+    var info=req.body;   //数据可传递
+
+    console.log(info);
+});
+
+//根据id删除剧目
+app.get("/deletePlay/:id",function (req,res) {
+    var play_id=req.params.id;
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/play/PlayQueryAll'
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            res.json(resData);
+
+        } else {
+            console.log(err);
+
+        }
+    });
+});
+
+//根据id查找剧目
+app.get("/searchPlay/:id",function(req,res){
+    var play_id=req.params.id; //id输出成功
+});
 
 app.get("/getFilmsList",function (req,res) {
     //film:[{filmName:xx,duration,type,director,language}...]
@@ -89,7 +139,6 @@ app.get("/getSchedule/:id",function (req,res) {
     res.json([{studio_name:"",time_id:"",sched_ticket_price:"",play_length:""}])
 
 });
-
 
 //根据studio_id查找座位信息
 app.get("/getSeatsList/:id",function (req,res) {

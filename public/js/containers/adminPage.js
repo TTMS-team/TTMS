@@ -19,6 +19,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         deleteEmployee:(emp_id)=>{
            dispatch({type:"DELETE_EMPLOYEE",emp_id})
+        },
+        searchEmployeeById:(emp_id)=>{
+            dispatch({type:"SEARCH_EMPLOYEE_BY_ID",emp_id})
         }
     };
 };

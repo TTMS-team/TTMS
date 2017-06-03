@@ -1,5 +1,6 @@
 import React from 'react';
 import {browserHistory} from 'react-router';
+import {Link} from 'react-router';
 
 
 
@@ -9,7 +10,25 @@ export default class Employee extends React.Component {
         this.props.getEmployeeList();
     }
 
-    searchEmployee() {
+    searchEmployee(){
+       var id=this.refs.searchInput.value;
+        this.props.searchEmployeeById(id);
+    }
+
+    modifyEmployee(emp_id){
+        
+       console.log(emp_id);
+    }
+
+    deleteEmployee(emp_id){  //finished
+        // this.props.deleteEmploy(emp_id);
+        // if(this.props.deleteTip===true){
+        //     this.props.getEmployeeList();
+        // }
+    }
+
+    addEmployee(){
+        browserHistory.push('/addEmployee');
     }
 
     render() {
@@ -21,14 +40,14 @@ export default class Employee extends React.Component {
                 <span>{value.emp_age}</span>
                 <span>{value.emp_position}</span>
                 <span>{value.emp_tel_num}</span>
-                <input type="button" value="修改"  onClick={this.modifyEmployee.bind(this,value.emp_id)}/>
+                <Link to={`/modifyEmployee?id=${value.emp_id}`}><input type="button" value="修改"  onClick={this.modifyEmployee.bind(this,value.emp_id)}/></Link>
                 <input type="button" value="删除" onClick={this.deleteEmployee.bind(this,value.emp_id)}/>
             </div>
         });
         
         return <div className="mainView">
             <div>
-                    <input type="text"/>
+                    <input type="text" ref="searchInput"/>
                     <button onClick={this.searchEmployee.bind(this)}>查询</button>
                     <button onClick={this.addEmployee.bind(this)}>添加</button>
             </div>

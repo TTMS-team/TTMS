@@ -30,8 +30,9 @@ export default class AdminPage extends React.Component {
                 p=<Ticket/>;
                 break;
             case "employee":
-                p=<Employee getEmployeeList={this.props.getEmployeeList} employeeList={this.props.employeeList} deleteTip={this.props.deleteTip}/>;
+                p=<Employee searchEmployeeById={this.props.searchEmployeeById} getEmployeeList={this.props.getEmployeeList} employeeList={this.props.employeeList} deleteTip={this.props.deleteTip}/>;
                 break;
+
         }
 
         return <div>

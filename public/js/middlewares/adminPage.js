@@ -1,10 +1,10 @@
 import request from 'superagent';
 
 export default store => next => action => {
-    if (action.type === "GET_FILMS_LIST--") {
-        request.get('/getFilmsList')
+    if (action.type === "SEARCH_EMPLOYEE_BY_ID") {
+        request.get(`/searchEmployee/${action.emp_id}`)
             .end((err, res) => {
-                next({type:"GET_LOGIN_TIP", data: res.body});
+                next({type:"SHOW_EMPLOYEE_LIST", data: res.body});
             });
     }
     else

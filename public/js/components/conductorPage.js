@@ -30,9 +30,9 @@ export default class ConductorPage extends React.Component {
         return <div>
             <Title username={this.props.username}/>
             <div>
-                <input type="text" placeholder="请输入影片名"/>
-                <button>查找</button>
-                <button>退票</button>
+                <input  className="search" type="text" placeholder="请输入影片名"/>
+                <button className="searchButton">查找</button>
+                <button className="searchButton">退票</button>
             </div>
             <div>
                 {filmList}

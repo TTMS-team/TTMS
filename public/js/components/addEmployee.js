@@ -1,3 +1,4 @@
+require ('../../css/style.css');
 import React from 'react';
 
 export default class AddEmployee extends React.Component {
@@ -19,25 +20,28 @@ export default class AddEmployee extends React.Component {
 
     render() {
 
-        return <div>
-            <label>姓名</label><input type="text" ref="emp_name"/>
-            <label>性别</label><input type="text" ref="emp_sex"/>
-            <label>年龄</label><input type="text" ref="emp_age"/>
-            <label>密码</label><input type="text" ref="emp_password"/>
-
-
-            <label>电话</label><input type="text" ref="emp_tel_num"/>
-            <label>邮箱</label><input type="text" ref="emp_email"/>
-            <label>住址</label><input type="text" ref="emp_addr"/>
-            <label>假期</label><input type="text" ref="emp_holiday"/>
-
-            <label>月薪</label><input type="text" ref="emp_month_money"/>
-            <label>年薪</label><input type="text" ref="emp_sum_money"/>
-            <label>职位</label><input type="text" ref="emp_position"/>
-            <label>入职日期</label><input type="text" ref="emp_induction_time"/>
-            
-            <button onClick={this.addEmployee.bind(this)}>提交</button>
-
+        return <div className="pageBody" >
+            <div class="form-group" className="col">
+               <label className="split"> 姓 名 </label><input type="text" className="addInput"  ref="emp_name"/>
+                <label className="split"> 性 别 </label><input type="text" className="addInput" ref="emp_sex"/>
+                <label className="split"> 年  龄 </label><input type="text" className="addInput" ref="emp_age"/>
+            </div>
+            <div  className="col">
+                <label className="split"> 密 码</label><input type="text" className="addInput" ref="emp_password"/>
+                <label className="split"> 电 话</label><input type="text" className="addInput" ref="emp_tel_num"/>
+                <label className="split"> 邮  箱</label><input type="text" className="addInput" ref="emp_email"/>
+            </div>
+            <div  className="col">
+                <label className="split" > 住 址</label><input type="text" className="addInput" ref="emp_addr"/>
+                <label className="split"> 假 期</label><input type="text" className="addInput" ref="emp_holiday"/>
+                <label className="split"> 月  薪 </label><input type="text" className="addInput" ref="emp_month_money"/>
+            </div>
+            <div  className="col">
+                <label className="split"> 年 薪</label><input type="text"  className="addInput" ref="emp_sum_money"/>
+                <label className="split"> 职 位</label><input type="text" className="addInput" ref="emp_position"/>
+                <label className="split"> 入职日期</label><input type="text" className="addInput" ref="emp_induction_time"/>
+            </div>
+            <button className="addSubButton" onClick={this.addEmployee.bind(this)}>提交</button>
         </div>
     }
 }

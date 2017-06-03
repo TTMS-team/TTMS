@@ -4,9 +4,8 @@ export default class AddEmployee extends React.Component {
     addEmployee(){
         var info= {"emp_addr":this.refs.emp_addr.value,
             "emp_age":this.refs.emp_age.value,
-            "emp_email":this.refs.emp_email.value
-            ,"emp_holiday":this.refs.emp_holiday.value,
-            "emp_image":this.refs.emp_image.value,
+            "emp_email":this.refs.emp_email.value,
+            "emp_holiday":this.refs.emp_holiday.value,
             "emp_induction_time":this.refs.emp_induction_time.value,
             "emp_month_money":this.refs.emp_month_money.value,
             "emp_name":this.refs.emp_name.value,
@@ -15,7 +14,6 @@ export default class AddEmployee extends React.Component {
             "emp_sex":this.refs.emp_sex.value,
             "emp_sum_money":this.refs.emp_sum_money.value,
             "emp_tel_num":this.refs.emp_tel_num.value};
-        console.log(info);
         this.props.addEmployee(info);
     }
 

@@ -41,7 +41,8 @@ app.get("/getEmployeeList",function (req,res) {
 
 //添加员工
 app.post('/addEmployee',function (req,res) {
-    var info=req.body;
+    var info=req.body;   //数据可传递
+
     console.log(info);
 });
 
@@ -63,7 +64,14 @@ app.get("/deleteEmployee/:id",function (req,res) {
 
         }
     });
-})
+});
+
+//根据id查找员工
+app.get("/searchEmployee/:id",function(req,res){
+   var emp_id=req.params.id; //id输出成功
+});
+
+
 
 app.get("/getFilmsList",function (req,res) {
     //film:[{filmName:xx,duration,type,director,language}...]

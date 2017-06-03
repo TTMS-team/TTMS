@@ -1,5 +1,6 @@
 import React from 'react';
 import {browserHistory} from 'react-router';
+import {Link} from 'react-router';
 
 
 
@@ -9,9 +10,9 @@ export default class Employee extends React.Component {
         this.props.getEmployeeList();
     }
 
-<<<<<<< HEAD
     searchEmployee(){
-
+       var id=this.refs.searchInput.value;
+        this.props.searchEmployeeById(id);
     }
 
     modifyEmployee(emp_id){
@@ -19,7 +20,7 @@ export default class Employee extends React.Component {
        console.log(emp_id);
     }
 
-    deleteEmployee(emp_id){
+    deleteEmployee(emp_id){  //finished
         // this.props.deleteEmploy(emp_id);
         // if(this.props.deleteTip===true){
         //     this.props.getEmployeeList();
@@ -28,9 +29,6 @@ export default class Employee extends React.Component {
 
     addEmployee(){
         browserHistory.push('/addEmployee');
-=======
-    searchEmployee() {
->>>>>>> 0daa65160af1ded128b94bda49528ea13e8a5f30
     }
 
     render() {
@@ -49,7 +47,7 @@ export default class Employee extends React.Component {
         
         return <div className="mainView">
             <div>
-                    <input type="text"/>
+                    <input type="text" ref="searchInput"/>
                     <button onClick={this.searchEmployee.bind(this)}>查询</button>
                     <button onClick={this.addEmployee.bind(this)}>添加</button>
             </div>

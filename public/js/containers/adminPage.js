@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return {
-       presentShow:state.adminPage.presentShow,
+        presentShow:state.adminPage.presentShow,
         employeeList:state.employee.employeeList,
         deleteTip:state.employee.deleteTip
     }

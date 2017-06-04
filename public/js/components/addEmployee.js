@@ -16,6 +16,7 @@ export default class AddEmployee extends React.Component {
             "emp_sex":this.refs.emp_sex.value,
             "emp_sum_money":this.refs.emp_sum_money.value,
             "emp_tel_num":this.refs.emp_tel_num.value};
+        
         this.props.addEmployee(info);
     }
 

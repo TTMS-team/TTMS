@@ -19,7 +19,7 @@ app.get("/",function (req,res) {
 
 app.get("/login",login);
 
-//获取全体员工数组
+//获取全体员工数组 over
 app.get("/getEmployeeList",function (req,res) {
     var resData=[];
     var options = {
@@ -39,10 +39,10 @@ app.get("/getEmployeeList",function (req,res) {
 
 });
 
-//添加员工
+//添加员工  over
 app.post('/addEmployee',function (req,res) {
     var info=req.body;   //数据可传递
-    console.log(info);
+    // console.log(info);
     //http://115.159.82.119:8080/Movie/employee/EmployeeAdd?name=li&password=123&position=1
     var resData=[];
     var options = {
@@ -61,10 +61,9 @@ app.post('/addEmployee',function (req,res) {
 
 });
 
-//根据id删除员工
+//根据id删除员工  over
 app.get("/deleteEmployee/:id",function (req,res) {
     var emp_id=req.params.id;
-    // console.log(emp_id)
     var resData=[];
     var options = {
         method: 'GET',
@@ -81,12 +80,52 @@ app.get("/deleteEmployee/:id",function (req,res) {
     });
 });
 
-//根据id查找员工
+//根据id查找员工  over
 app.get("/searchEmployee/:id",function(req,res){
-   var emp_id=req.params.id; //id输出成功
+   var emp_id=req.params.id; //前后端跑通
+   //前端接受一个数组
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/employee/EmployeeQueryId?id='+emp_id
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            res.json(resData);
+        } else {
+            console.log(err);
+
+        }
+    });
+
 });
 
+//修改员工信息   服务器总是返回false
+app.post("/updateEmployeeModify",function (req,res) {
+    var info=req.body;
+    console.log(info)
+    var resData="";
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/employee/EmployeeUpdata?id='
+        +info.id+'&name='+info.name+'&password='+info.password
+        +'&position='+info.position+'&tel='+info.tel+'&addr='+info.addr
+        +'&email='+info.email+'&induction='+info.induction+'&month='+info.monthMoney
+        +'&sum='+info.sumMoney+'&holiday='+info.holiday+'&age='+info.age+'&sex='+info.sex
+    };
+    
+    request(options,function (err,response,body) {
+        if (response) {
+             resData=body;
+            console.log(resData)
+            res.json(resData);
+        } else {
+            console.log(err);
 
+        }
+    });
+});
 
 app.get("/getFilmsList",function (req,res) {
     //film:[{filmName:xx,duration,type,director,language}...]

@@ -1,6 +1,5 @@
 import React from 'react';
 import {browserHistory} from 'react-router';
-import {Link} from 'react-router';
 
 
 
@@ -11,13 +10,12 @@ export default class Employee extends React.Component {
     }
 
     searchEmployee(){
-       var id=this.refs.searchInput.value;
+        var id=this.refs.searchInput.value;
         this.props.searchEmployeeById(id);
     }
 
     modifyEmployee(emp_id){
-        
-       console.log(emp_id);
+        browserHistory.push(`/modifyEmployee?id=${emp_id}`);
     }
 
     deleteEmployee(emp_id){  //finished
@@ -44,7 +42,7 @@ export default class Employee extends React.Component {
                 <span>{value.emp_age}</span>
                 <span>{value.emp_position}</span>
                 <span>{value.emp_tel_num}</span>
-                <Link to={`/modifyEmployee?id=${value.emp_id}`}><input type="button" value="修改"  onClick={this.modifyEmployee.bind(this,value.emp_id)}/></Link>
+                <input type="button" value="修改"  onClick={this.modifyEmployee.bind(this,value.emp_id)}/>
                 <input type="button" value="删除" onClick={this.deleteEmployee.bind(this,value.emp_id)}/>
             </div>
         });

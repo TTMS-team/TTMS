@@ -1,4 +1,4 @@
-import modifyEmployee from "../components/modifyEmployee";
+import modifyEmployee from "../../components/adminEmployee/modifyEmployee";
 import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {

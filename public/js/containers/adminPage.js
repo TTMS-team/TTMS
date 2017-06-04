@@ -5,7 +5,9 @@ const mapStateToProps = (state) => {
     return {
         presentShow:state.adminPage.presentShow,
         employeeList:state.employee.employeeList,
-        deleteTip:state.employee.deleteTip
+        deleteEmployeeTip:state.employee.deleteTip,
+        studioList:state.studio.studioList,
+        deleteStudioTip:state.studio.deleteTip
     }
 };
 
@@ -14,6 +16,7 @@ const mapDispatchToProps = (dispatch) => {
         getPresentShow:(target)=>{
              dispatch({type:"GET_PRESENT_SHOW",target});
          },
+        
         getEmployeeList:()=>{
             dispatch({type:"GET_EMPLOYEE_LIST"});
         },
@@ -22,6 +25,16 @@ const mapDispatchToProps = (dispatch) => {
         },
         searchEmployeeById:(emp_id)=>{
             dispatch({type:"SEARCH_EMPLOYEE_BY_ID",emp_id})
+        },
+        
+        getStudioList:()=>{
+            dispatch({type:"GET_STUDIO_LIST"})
+        },
+        searchStudioById:(studio_id)=>{
+            dispatch({type:"SEARCH_STUDIO_BY_ID",studio_id})
+        },
+        deleteStudio:(studio_id)=>{
+            dispatch({type:"DELETE_STUDIO",studio_id})
         }
     };
 };

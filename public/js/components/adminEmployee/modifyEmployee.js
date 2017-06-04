@@ -26,12 +26,13 @@ export default class ModifyEmployee extends React.Component {
     }
 
     componentWillMount() {
-        this.props.getOldEmployeeInfo(this.props.location.query.id);//ok
+        this.props.getOldEmployeeInfo(this.props.location.query.id);
     }
 
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.updateEmployeeTip) {
+            alert("修改成功！");
             browserHistory.push('/adminPage');
         }
     }

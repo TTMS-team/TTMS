@@ -23,7 +23,7 @@ export default class Employee extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.deleteTip) {
+        if (nextProps.deleteEmployeeTip) {
             this.props.getEmployeeList();
             alert("删除成功！")
         } 

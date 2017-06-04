@@ -11,13 +11,13 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
 app.get("/",function (req,res) {
     res.sendfile('index.html');
 });
-
-
 app.get("/login",login);
+
+
+
 
 //获取全体员工数组 over
 app.get("/getEmployeeList",function (req,res) {
@@ -42,8 +42,6 @@ app.get("/getEmployeeList",function (req,res) {
 //添加员工  over
 app.post('/addEmployee',function (req,res) {
     var info=req.body;   //数据可传递
-    // console.log(info);
-    //http://115.159.82.119:8080/Movie/employee/EmployeeAdd?name=li&password=123&position=1
     var resData=[];
     var options = {
         method: 'GET',
@@ -126,6 +124,119 @@ app.post("/updateEmployeeModify",function (req,res) {
         }
     });
 });
+
+
+//获取演出厅列表
+app.get("/getStudioList",function (req,res) {
+    //[{studio}]
+    // var resData=[];
+    // var options = {
+    //     method: 'GET',
+    //     url: 'http://115.159.82.119:8080/Movie/employee/EmployeeQueryAll'
+    // };
+    // request(options,function (err,response,body) {
+    //     if (response) {
+    //         resData=body;
+    //         res.json(resData);
+    //     } else {
+    //         console.log(err);
+    //     }
+    // }
+    
+    res.json([{studio_id:1,studio_name:"haha",studio_row:22,studio_col:33}]);
+});
+
+//添加演出厅
+app.post("/addStudio",function (req,res) {
+    var info=req.body;   //数据可传递
+    console.log(info);//ok
+    // var options = {
+    //     method: 'GET',
+    //     url: 'http://115.159.82.119:8080/Movie/employee/EmployeeAdd?name='+info.emp_name+'&password='+info.emp_password+'&position='+info.emp_position
+    // };
+    // request(options,function (err,response,body) {
+    //     if (response) {
+    //         res.json(body);
+    //     } else {
+    //         console.log(err);
+    //     }
+    // });
+    res.json("true");
+});
+//根据id查找演出厅  over
+app.get("/searchStudio/:id",function(req,res){
+    var studio_id=req.params.id; //前后端跑通
+    //前端接受一个数组
+    // var resData=[];
+    // var options = {
+    //     method: 'GET',
+    //     url: 'http://115.159.82.119:8080/Movie/employee/EmployeeQueryId?id='+emp_id
+    // };
+    // request(options,function (err,response,body) {
+    //     if (response) {
+    //         resData=body;
+    //         res.json(resData);
+    //     } else {
+    //         console.log(err);
+    //
+    //     }
+    // });
+    res.json([{studio_id:"xixi",studio_name:"haha",studio_row:22,studio_col:33}]);
+
+});
+
+//根据ID删除演出厅
+app.get("/deleteStudio/:id",function (req,res) {
+    var studio_id=req.params.id;
+    // var resData=[];
+    // var options = {
+    //     method: 'GET',
+    //     url: 'http://115.159.82.119:8080/Movie/employee/EmployeeDelete?id='+emp_id
+    // };
+    // request(options,function (err,response,body) {
+    //     if (response) {
+    //         resData=body;
+    //         res.json(resData);
+    //     } else {
+    //         console.log(err);
+    //     }
+    // });
+    res.json("true");
+});
+//updateStudioModify
+app.post("/updateStudioModify",function (req,res) {
+    // var info=req.body;
+    // console.log(info)
+    // var resData="";
+    // var options = {
+    //     method: 'GET',
+    //     url: 'http://115.159.82.119:8080/Movie/employee/EmployeeUpdata?id='
+    //     +info.id+'&name='+info.name+'&password='+info.password
+    //     +'&position='+info.position+'&tel='+info.tel+'&addr='+info.addr
+    //     +'&email='+info.email+'&induction='+info.induction+'&month='+info.monthMoney
+    //     +'&sum='+info.sumMoney+'&holiday='+info.holiday+'&age='+info.age+'&sex='+info.sex
+    // };
+    //
+    // request(options,function (err,response,body) {
+    //     if (response) {
+    //         resData=body;
+    //         console.log(resData)
+    //         res.json(resData);
+    //     } else {
+    //         console.log(err);
+    //
+    //     }
+    // });
+    res.json("true");
+});
+
+
+
+
+
+
+
+
 
 app.get("/getFilmsList",function (req,res) {
     //film:[{filmName:xx,duration,type,director,language}...]

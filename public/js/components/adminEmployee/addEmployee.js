@@ -1,4 +1,4 @@
-require ('../../css/style.css');
+require ('../../../css/style.css');
 import React from 'react';
 import {browserHistory} from 'react-router';
 
@@ -23,6 +23,7 @@ export default class AddEmployee extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.addEmployeeTip) {
+            alert("添加成功！");
             browserHistory.push('/adminPage');
         } else {
             alert("添加失败！");

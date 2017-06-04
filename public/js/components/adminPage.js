@@ -1,10 +1,10 @@
 require ('../../css/style.css');
 import React from 'react';
 import Title from './title';
-import Employee from './employee';
+import Employee from './adminEmployee/employee';
 import Play from './play';
 import Schedule from './schedule';
-import Studio from './studio';
+import Studio from './adminStudio/studio';
 import Ticket from './ticket';
 
 export default class AdminPage extends React.Component {
@@ -24,13 +24,13 @@ export default class AdminPage extends React.Component {
                 p=<Play/>;
                 break;
             case "studio":
-                p=<Studio/>;
+                p=<Studio getStudioList={this.props.getStudioList} studioList={this.props.studioList} searchStudioById={this.props.searchStudioById} deleteStudio={this.props.deleteStudio} deleteStudioTip={this.props.deleteStudioTip}/>;
                 break;
             case "ticket":
                 p=<Ticket/>;
                 break;
             case "employee":
-                p=<Employee deleteEmployee={this.props.deleteEmployee} searchEmployeeById={this.props.searchEmployeeById} getEmployeeList={this.props.getEmployeeList} employeeList={this.props.employeeList} deleteTip={this.props.deleteTip}/>;
+                p=<Employee deleteEmployee={this.props.deleteEmployee} searchEmployeeById={this.props.searchEmployeeById} getEmployeeList={this.props.getEmployeeList} employeeList={this.props.employeeList} deleteEmployeeTip={this.props.deleteEmployeeTip}/>;
                 break;
 
         }

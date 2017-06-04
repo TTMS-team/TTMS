@@ -35,8 +35,9 @@ export default class AdminPage extends React.Component {
 
         }
 
-        return <div>
+        return <div className="pageBody">
             <Title username={this.props.username}/>
+            <div id="menu">
             <ul id="aside" onClick={this.onAside.bind(this)} >
                <li className="schedule" >演出计划</li>
                <li className="play">剧目管理</li>
@@ -44,6 +45,7 @@ export default class AdminPage extends React.Component {
                <li className="ticket">票务管理</li>
                <li className="employee">员工管理</li>
             </ul>
+                </div>
             <div>
                 {p}
             </div>

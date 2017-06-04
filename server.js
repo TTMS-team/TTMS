@@ -33,7 +33,7 @@ app.get("/getEmployeeList",function (req,res) {
 
         } else {
             console.log(err);
-            
+
         }
     });
 
@@ -82,6 +82,7 @@ app.get("/deleteEmployee/:id",function (req,res) {
 
 //根据id查找员工  over
 app.get("/searchEmployee/:id",function(req,res){
+<<<<<<< HEAD
    var emp_id=req.params.id; //前后端跑通
    //前端接受一个数组
     var resData=[];
@@ -99,6 +100,9 @@ app.get("/searchEmployee/:id",function(req,res){
         }
     });
 
+=======
+    var emp_id=req.params.id; //id输出成功
+>>>>>>> 07cef0a821c9ec9fa9c613025ce439a2f508edc0
 });
 
 //修改员工信息   服务器总是返回false
@@ -143,7 +147,6 @@ app.get("/getSchedule/:id",function (req,res) {
     res.json([{studio_name:"",time_id:"",sched_ticket_price:"",play_length:""}])
 
 });
-
 
 //根据studio_id查找座位信息
 app.get("/getSeatsList/:id",function (req,res) {

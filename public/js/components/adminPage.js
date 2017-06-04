@@ -1,4 +1,7 @@
 require ('../../css/style.css');
+require('../../css/adminInterfaceFramework.css');
+require('../../css/playStyle.css');
+
 import React from 'react';
 import Title from './title';
 import Employee from './adminEmployee/employee';

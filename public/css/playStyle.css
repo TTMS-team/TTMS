@@ -1,0 +1,13 @@
+/*
+剧目
+*/
+.playSpan
+{
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    margin-left: 27px;
+    width: 12.5%;
+    margin-top: 50px;
+    height: 40px;
+    text-align: center;
+}

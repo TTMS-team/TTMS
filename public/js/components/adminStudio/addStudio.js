@@ -1,4 +1,5 @@
 require ('../../../css/style.css');
+require('../../../css/studioStyle.css');
 import React from 'react';
 import {browserHistory} from 'react-router';
 

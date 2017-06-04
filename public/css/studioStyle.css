@@ -1,0 +1,41 @@
+/*
+演出厅
+*/
+#addStudio
+{
+    width:800px;
+    height: 550px;
+    border:1px solid #a1a1a1;
+    margin-left:300px;
+    margin-top: 50px;
+}
+.colStyle
+{
+    margin-left: 50px;
+    text-align: center;
+}
+.studioLab
+{
+    margin-right: 30px;
+}
+.studioInput
+{
+    border:1px solid #a1a1a1;
+    padding:20px 20px;
+    width:225px;
+    height : 10px;
+    border-radius:20px;
+    margin-top: 60px;
+    font-size:12px;
+    margin-left: 35px;
+}
+
+.studioSpan
+{
+    font-size: 18px;
+    margin-left: 120px;
+    width: 12.5%;
+    margin-top: 50px;
+    height: 40px;
+    text-align: center;
+}

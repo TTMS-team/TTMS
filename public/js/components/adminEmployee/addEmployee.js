@@ -35,7 +35,7 @@ export default class AddEmployee extends React.Component {
 
         return <div className="pageBody" >
             <div class="form-group" className="col">
-               <label className="split"> 姓 名 </label><input type="text" className="addInput"  ref="emp_name"/>
+               <label className="split"> 姓名 </label><input type="text" className="addInput"  ref="emp_name"/>
                 <label className="split"> 性 别 </label><input type="text" className="addInput" ref="emp_sex"/>
                 <label className="split"> 年  龄 </label><input type="text" className="addInput" ref="emp_age"/>
             </div>

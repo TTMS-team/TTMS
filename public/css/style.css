@@ -3,6 +3,65 @@
     background: url(../image/timg.jpg);
     background-size: 100%,100%;
 }
+
+#title
+{
+    height: 62px;
+    overflow: hidden;
+    border-bottom: 1px solid #d6dfea;
+    font-size:xx-large;
+}
+
+.table
+{
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    margin-left: 70px;
+    width: 12.5%;
+    margin-top: 50px;
+    height: 40px;
+    text-align: center;
+
+}
+.table2
+{
+    width: 12.5%;
+    margin-left: 80px;
+    text-align: center;
+
+}
+.table1
+{
+    position:relative;
+    text-align:center;
+    width: 12.5%;
+    margin-left:60px ;
+}
+.table3
+{
+    width: 12.5%;
+    margin-left:90px ;
+    text-align: center;
+}
+
+.conductor
+{
+    width: 100%;
+    height: 70px;
+}
+
+.col
+{
+    margin-left: 150px;
+}
+.split
+{
+    margin-right: 30px;
+}
+
+/*
+管理员主界面
+*/
 .pageBody
 {
     width: 1275px;
@@ -11,20 +70,126 @@
     border:1px solid #a1a1a1;
     padding:20px 20px;
 }
-.loginTitle
+
+#aside
 {
+    border:1px solid #a1a1a1;
+    padding:20px 20px;
+    border-radius:20px;
+    height:470px;
+    width:200px;
+    margin:0px;
+    float:left
+}
+
+#menu ul
+{
+    list-style: none;
+    margin: 0px;
+}
+#menu ul li
+{
+    height: 60px;
+    width: 150px;
+    margin-top: 25px;
+    font-family: "Microsoft YaHei";
+    font-size: 24px;
     text-align: center;
-    margin-top: 50px;
-    font-size:35px;
-    margin-left: 120px;
+    background: #5890AD;
 }
-#title
+.mainView
 {
-    height: 62px;
-    overflow: hidden;
-    border-bottom: 1px solid #d6dfea;
-    font-size:xx-large;
+    border:1px solid #a1a1a1;
+    padding:20px 20px;
+    border-radius:20px;
+    height:450px;
+    width:75%;
+    margin:15px;
+    float:right;
 }
+/*搜索框*/
+.search
+{
+    margin: 0 0 0 7px;
+    height: 28px;
+    outline: 0;
+    border: 0;
+    width: 200px;
+    _top: 4px;
+    margin-left: 55%;
+}
+/*搜索按钮*/
+.searchButton
+{
+    border:2px solid #a1a1a1;
+    width: 79px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    background-position: left top;
+    color: #555;
+    font-size: 14px;
+    margin-left: 5px;
+}
+/*修改按钮*/
+.modifyButton
+{
+    border:2px solid #a1a1a1;
+    width: 79px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    background-position: left top;
+    color: #555;
+    font-size: 14px;
+    position:fixed;
+    right:240px;
+}
+/*删除按钮*/
+.deleteButton
+{
+    border:2px solid #a1a1a1;
+    width: 79px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    background-position: left top;
+    color: #555;
+    font-size: 14px;
+    position:fixed;
+    right:155px;
+}
+/*员工*/
+.addInput
+{
+    border:1px solid #a1a1a1;
+    padding:20px 20px;
+    width:225px;
+    height : 10px;
+    border-radius:20px;
+    margin-top: 50px;
+    font-size:12px;
+    margin-right: 35px;
+}
+
+.addSubButton
+{
+    margin-left: 80%;
+    margin-top: 60px;
+    width: 80px;
+    height: 40px;
+    border-radius:20px;
+}
+
+/*
+登录
+*/
 .username
 {
     border:1px solid #a1a1a1;
@@ -65,124 +230,65 @@
     height: 50px;
 }
 
-
-#aside
+.loginTitle
 {
-    border:1px solid #a1a1a1;
-    padding:20px 20px;
-    border-radius:20px;
-    height:470px;
-    width:200px;
-    margin:0px;
-    float:left
-}
-
-#menu ul
-{
-    list-style: none;
-    margin: 0px;
-}
-#menu ul li
-{
-    height: 60px;
-    width: 150px;
-    margin-top: 25px;
-    font-family: "Microsoft YaHei";
-    font-size: 24px;
     text-align: center;
-    background: #5890AD;
-}
-.mainView
-{
-    border:1px solid #a1a1a1;
-    padding:20px 20px;
-    border-radius:20px;
-    height:450px;
-    width:75%;
-    margin:15px;
-    float:right;
-}
-.search
-{
-    margin: 0 0 0 7px;
-    height: 28px;
-    outline: 0;
-    border: 0;
-    width: 200px;
-    _top: 4px;
-    margin-left: 55%;
-}
-.searchButton
-{
-    border:2px solid #a1a1a1;
-    width: 79px;
-    height: 29px;
-    line-height: 29px;
-    text-align: center;
-    border: 0;
-    outline: 0;
-    background-position: left top;
-    color: #555;
-    font-size: 14px;
-    margin-left: 5px;
+    margin-top: 50px;
+    font-size:35px;
+    margin-left: 120px;
 }
 
-.addInput
+/*
+演出厅
+*/
+#addStudio
+{
+    width:800px;
+    height: 550px;
+    border:1px solid #a1a1a1;
+    margin-left:300px;
+    margin-top: 50px;
+}
+.colStyle
+{
+    margin-left: 50px;
+    text-align: center;
+}
+.studioLab
+{
+    margin-right: 30px;
+}
+.studioInput
 {
     border:1px solid #a1a1a1;
     padding:20px 20px;
     width:225px;
     height : 10px;
     border-radius:20px;
-    margin-top: 50px;
-    font-size:12px;
-    margin-right: 35px;
-}
-.col
-{
-   margin-left: 150px;
-}
-.split
-{
-    margin-right: 30px;
-}
-.addSubButton
-{
-    margin-left: 80%;
     margin-top: 60px;
-    width: 80px;
-    height: 40px;
-    border-radius:20px;
+    font-size:12px;
+    margin-left: 35px;
 }
 
-.table
+.studioSpan
+{
+    font-size: 18px;
+    margin-left: 120px;
+    width: 12.5%;
+    margin-top: 50px;
+    height: 40px;
+    text-align: center;
+}
+/*
+剧目
+*/
+.playSpan
 {
     font-family: "Microsoft YaHei";
     font-size: 18px;
-    margin-left: 80px;
-    width: 200px;
+    margin-left: 27px;
+    width: 12.5%;
     margin-top: 50px;
     height: 40px;
-}
-.table1
-{
-    margin-left: 70px;
-}
-.table2
-{
-    margin-left: 60px;
-}
-.table3
-{
-    margin-left: 80px;
-}
-.table4
-{
-    margin-left: 95px;
-}
-
-.conductor
-{
-    margin: 250px;
     text-align: center;
 }

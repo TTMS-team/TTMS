@@ -14,13 +14,13 @@ export default class Play extends React.Component {
 
             <div>
                 <div>
-                <span>剧目编号</span>
-                <span>剧目名称</span>
-                <span>剧目语言</span>
-                <span>剧目类型</span>
-                <span>剧目时长</span>
-                <span>剧目票价</span>
-                <span>剧目状态</span>
+                <span className="playSpan">剧目编号</span>
+                <span className="playSpan">剧目名称</span>
+                <span className="playSpan">剧目语言</span>
+                <span className="playSpan">剧目类型</span>
+                <span className="playSpan">剧目时长</span>
+                <span className="playSpan">剧目票价</span>
+                <span className="playSpan">剧目状态</span>
             </div>
             
             </div>

@@ -64,14 +64,18 @@ export default class ModifyStudio extends React.Component {
         const row=this.state.sex ===null ? oldInfo.studio_sex:this.state.row;
         const col=this.state.age ===null ? oldInfo.studio_age:this.state.col;
         
-        return <div>
-            <label>演出厅名称</label><input type="text" value={name} ref="studio_name" onChange={this.onchangeName.bind(this)}/>
-            <label>座位行数</label><input type="text" value={row} ref="studio_row" onChange={this.onchangeRow.bind(this)}/>
-            <label>座位列数</label><input type="text" value={col} ref="studio_col" onChange={this.onchangeCol.bind(this)}/>
+        return <div div id="addStudio">
+            <div className="colStyle">
+                <label class="studioLab">演出厅名称</label><input className="studioInput" type="text" value={name} ref="studio_name" onChange={this.onchangeName.bind(this)}/>
+            </div>
+            <div className="colStyle">
+                <label class="studioLab">座位行数</label><input className="studioInput"  type="text" value={row} ref="studio_row" onChange={this.onchangeRow.bind(this)}/>
+            </div>
+            <div className="colStyle">
+                <label class="studioLab">座位列数</label><input className="studioInput"  type="text" value={col} ref="studio_col" onChange={this.onchangeCol.bind(this)}/>
+            </div>
 
-
-
-            <button onClick={this.upDateStudioModify.bind(this)}>确认修改</button>
+            <button  className="addSubButton" onClick={this.upDateStudioModify.bind(this)}>确认修改</button>
         </div>
     }
 }

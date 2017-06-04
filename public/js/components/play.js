@@ -22,7 +22,7 @@ export default class Play extends React.Component {
                 <span>剧目票价</span>
                 <span>剧目状态</span>
             </div>
-                {p}
+            
             </div>
         </div>
     }

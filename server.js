@@ -97,27 +97,26 @@ app.get("/searchEmployee/:id",function(req,res){
 //修改员工信息   服务器总是返回false  可能是有些信息服务器设置的不能为空导致url错误
 app.post("/updateEmployeeModify",function (req,res) {
     var info=req.body;
+    console.log(info)
     var resData="";
-    // var options = {
-    //     method: 'GET',
-    //     url: 'http://115.159.82.119:8080/Movie/employee/EmployeeUpdata?id='
-    //     +info.id+'&name='+info.name+'&password='+info.password
-    //     +'&position='+info.position+'&tel='+info.tel+'&addr='+info.addr
-    //     +'&email='+info.email+'&induction='+info.induction+'&month='+info.monthMoney
-    //     +'&sum='+info.sumMoney+'&holiday='+info.holiday+'&age='+info.age+'&sex='+info.sex
-    // };
-    //
-    // request(options,function (err,response,body) {
-    //     if (response) {
-    //          resData=body;
-    //         console.log(resData)
-    //         res.json(resData);
-    //     } else {
-    //         console.log(err);
-    //
-    //     }
-    // });
-    res.json("true")
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/employee/EmployeeUpdata?id='
+        +info.id+'&name='+info.name+'&password='+info.password
+        +'&position='+info.position+'&tel='+info.tel+'&addr='+info.addr
+        +'&email='+info.email+'&induction='+info.induction+'&month='+info.monthMoney
+        +'&sum='+info.sumMoney+'&holiday='+info.holiday+'&age='+info.age+'&sex='+info.sex
+    };
+    console.log(options.url);
+    request(options,function (err,response,body) {
+        if (response) {
+             resData=body;
+            console.log(body);
+            res.json(resData);
+        } else {
+            console.log(err);
+        }
+    });
 });
 
 
@@ -152,7 +151,7 @@ app.post("/addStudio",function (req,res) {
         method: 'GET',
         url: 'http://115.159.82.119:8080/Movie/studio/StudioAdd?studio_name='+info.studio_name+'&studio_row_count='+info.studio_row_count+'&studio_col_count='+info.studio_col_count+'&studio_introduction='+info.studio_introduction+'&studio_isavailable='+info.studio_isavailable
     };
-    console.log(options.url);
+    // console.log(options.url);
     request(options,function (err,response,body) {
         if (response) {
             res.json(body);
@@ -162,17 +161,17 @@ app.post("/addStudio",function (req,res) {
     });
 });
 
-//根据name查找演出厅  有的查不到
+//根据id查找演出厅  有的查不到
 app.get("/searchStudio/:id",function(req,res){
-    var studio_id=req.params.id; //前后端跑通
+    var studio_id=req.params.id; //id可收到
     var resData=[];
     var options = {
         method: 'GET',
-        url: 'http://115.159.82.119:8080/Movie/studio/StudioQueryName?name='+studio_id
+        url: 'http://115.159.82.119:8080/Movie/studio/StudioQueryName?name='+encodeURI(studio_id)
     };
     request(options,function (err,response,body) {
         if (response) {
-            resData=body;
+            resData=body;//返回空
             res.json(resData);
         } else {
             console.log(err);
@@ -268,7 +267,7 @@ app.get("/deletePlay/:id",function (req,res) {
     // });
     res.json("truey");
 });
-// /addPlay
+//增加剧目
 app.post('/addPlay',function (req,res) {
     var info=req.body;   //over
     var resData=[];
@@ -296,7 +295,7 @@ app.post('/addPlay',function (req,res) {
     // });
     res.json("truerrr");
 });
-// updatePlayModify
+// 修改剧目
 app.post("/updatePlayModify",function (req,res) {
 
     var info=req.body;
@@ -323,12 +322,6 @@ app.post("/updatePlayModify",function (req,res) {
     // });
     // res.json("true");
 });
-
-
-
-
-
-
 
 
 

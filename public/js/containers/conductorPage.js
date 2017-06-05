@@ -3,14 +3,14 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return {
-          films:state.conductorPage.films
+         playList:state.play.playList
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getFilms:()=>{
-            dispatch({type:"GET_FILMS_LIST"});
+        getPlayList:()=>{
+            dispatch({type:"GET_PLAY_LIST"});
         }
     };
 };

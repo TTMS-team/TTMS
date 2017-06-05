@@ -1,3 +1,5 @@
+require ('../../../css/style.css');
+require('../../../css/employeeStyle.css');
 import React from 'react';
 import {browserHistory} from 'react-router';
 
@@ -136,24 +138,29 @@ export default class ModifyEmployee extends React.Component {
         const position=this.state.position ===null ? oldInfo.emp_position:this.state.position;
         const induction=this.state.induction ===null ? oldInfo.emp_induction_time:this.state.induction;
 
-        return <div>
-            <label>姓名</label><input type="text" value={name} ref="emp_name" onChange={this.onchangeName.bind(this)}/>
-            <label>性别</label><input type="text" value={sex} ref="emp_sex" onChange={this.onchangeSex.bind(this)}/>
-            <label>年龄</label><input type="text" value={age} ref="emp_age" onChange={this.onchangeAge.bind(this)}/>
-            <label>密码</label><input type="text" value={password} ref="emp_password" onChange={this.onchangePassword.bind(this)}/>
+        return <div className="pageBody">
+            <div class="form-group" className="col">
+                <label label className="split">姓 名</label><input  className="addInput"  type="text" value={name} ref="emp_name" onChange={this.onchangeName.bind(this)}/>
+                <label label className="split">性 别</label><input  className="addInput" type="text" value={sex} ref="emp_sex" onChange={this.onchangeSex.bind(this)}/>
+                <label label className="split">年 龄</label><input  className="addInput" type="text" value={age} ref="emp_age" onChange={this.onchangeAge.bind(this)}/>
+            </div>
+            <div className="col">
+                <label label className="split">密 码</label><input  className="addInput" type="text" value={password} ref="emp_password" onChange={this.onchangePassword.bind(this)}/>
+                <label label className="split">电 话</label><input  className="addInput" type="text" value={tel} ref="emp_tel_num" onChange={this.onchangeTel.bind(this)}/>
+                <label label className="split">邮 箱</label><input  className="addInput" type="text"  value={email} ref="emp_email"onChange={this.onchangeEmail.bind(this)}/>
+            </div>
+            <div className="col">
+                <label label className="split">住 址</label><input  className="addInput" type="text" value={addr} ref="emp_addr" onChange={this.onchangeAddr.bind(this)}/>
+                <label label className="split">假 期</label><input  className="addInput" type="text"  value={holiday} ref="emp_holiday" onChange={this.onchangeHoliday.bind(this)}/>
+                <label label className="split">月 薪</label><input  className="addInput" type="text" value={monthMoney} ref="emp_month_money" onChange={this.onchangeMonthMoney.bind(this)}/>
+            </div>
+            <div className="col">
+                <label label className="split">年 薪</label><input  className="addInput" type="text"  value={sumMoney} ref="emp_sum_money" onChange={this.onchangeSumMoney.bind(this)}/>
+                <label label className="split">职 位</label><input   className="addInput" type="text" value={position} ref="emp_position" onChange={this.onchangePosition.bind(this)}/>
+                <label label className="split">入职日期</label><input className="addInput" type="text" value={induction}  ref="emp_induction_time" onChange={this.onchangeInduction.bind(this)}/>
+            </div>
 
-
-            <label>电话</label><input type="text" value={tel} ref="emp_tel_num" onChange={this.onchangeTel.bind(this)}/>
-            <label>邮箱</label><input type="text"  value={email} ref="emp_email"onChange={this.onchangeEmail.bind(this)}/>
-            <label>住址</label><input type="text" value={addr} ref="emp_addr" onChange={this.onchangeAddr.bind(this)}/>
-            <label>假期</label><input type="text"  value={holiday} ref="emp_holiday" onChange={this.onchangeHoliday.bind(this)}/>
-
-            <label>月薪</label><input type="text" value={monthMoney} ref="emp_month_money" onChange={this.onchangeMonthMoney.bind(this)}/>
-            <label>年薪</label><input type="text"  value={sumMoney} ref="emp_sum_money" onChange={this.onchangeSumMoney.bind(this)}/>
-            <label>职位</label><input type="text" value={position} ref="emp_position" onChange={this.onchangePosition.bind(this)}/>
-            <label>入职日期</label><input type="text" value={induction}  ref="emp_induction_time" onChange={this.onchangeInduction.bind(this)}/>
-
-            <button onClick={this.upDateEmployeeModify.bind(this)}>确认修改</button>
+            <button className="addSubButton" onClick={this.upDateEmployeeModify.bind(this)}>确认修改</button>
         </div>
     }
 }

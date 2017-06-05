@@ -5,7 +5,7 @@ export default class Title extends React.Component {
     render() {
         return <div id="title">
                 <span>{this.props.username}</span>
-                <span>today影院管理系统</span>
+                <span>Today  影 院 管 理 系 统</span>
             
         </div>
     }

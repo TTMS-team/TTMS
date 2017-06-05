@@ -1,0 +1,50 @@
+/*
+登录
+*/
+.username
+{
+    border:1px solid #a1a1a1;
+    padding:20px 20px;
+    padding: 10px 40px 10px 10px;
+    border-radius: 3px;
+    width: 232px;
+    margin-left: 85px;
+    margin-top: 60px;
+}
+.pass
+{
+    border:1px solid #a1a1a1;
+    padding:20px 20px;
+    padding: 10px 40px 10px 10px;
+    border-radius: 3px;
+    width: 232px;
+    margin-left: 85px;
+    margin-top: 20px;
+}
+#login
+{
+    float:right;
+    width:400px;
+    height: 350px;
+    border:1px solid #a1a1a1;
+    margin-right:100px;
+    margin-top: 100px;
+}
+.submit
+{
+    border:1px solid #a1a1a1;
+    padding:20px 20px;
+    border-radius: 3px;
+    width: 232px;
+    margin-left: 85px;
+    margin-top: 20px;
+    height: 50px;
+}
+
+.loginTitle
+{
+    text-align: center;
+    margin-top: 50px;
+    font-size:35px;
+    margin-left: 120px;
+}

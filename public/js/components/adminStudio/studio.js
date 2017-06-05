@@ -45,13 +45,14 @@ export default class Studio extends React.Component {
         var p=this.props.studioList.map((value,index)=>{
             return <div>
                 <div>
-                    <span>{value.studio_id}</span>
-                    <span>{value.studio_name}</span>
-                    <span>{value.studio_row_count}</span>
-                    <span>{value.studio_col_count}</span>
+
+                    <span className="studioSpan">{value.studio_id}</span>
+                    <span className="studioSpan">{value.studio_name}</span>
+                    <span className="studioSpan1">{value.studio_row}</span>
+                    <span className="studioSpan1">{value.studio_col}</span>
                     <span>{value.studio_isavailable}</span>
-                    <input type="button" value="修改" onClick={this.modifyStudio.bind(this,value.studio_id)}/>
-                    <input type="button" value="删除" onClick={this.deleteStudio.bind(this,value.studio_id)}/>
+                    <input  className="studioButton" type="button" value="修改" onClick={this.modifyStudio.bind(this,value.studio_id)}/>
+                    <input    className="studioButton1" type="button" value="删除" onClick={this.deleteStudio.bind(this,value.studio_id)}/>
                 </div>
             </div>
         });
@@ -59,16 +60,18 @@ export default class Studio extends React.Component {
 
         return <div className="mainView">
             <div>
-                <input type="text" ref="searchInput" placeholder="请输入演出厅ID" />
-                <button onClick={this.searchStudio.bind(this)}>查询</button>
-                <button onClick={this.addStudio.bind(this)}>添加</button>
+
+                <input  className="search" type="text" ref="searchInput" placeholder="请输入演出厅ID" />
+                <button  className="searchButton" onClick={this.searchStudio.bind(this)}>查询</button>
+                <button  className="searchButton" onClick={this.addStudio.bind(this)}>添加</button>
             </div>
             <div>
-                <span>演出厅ID</span>
-                <span>演出厅名称</span>
-                <span>演出厅行数</span>
-                <span>演出厅列数</span>
+                <span className="table">演出厅ID</span>
+                <span className="table">演出厅名称</span>
+                <span className="table">演出厅行数</span>
+                <span className="table">演出厅列数</span>
                 <span>演出厅是否可用</span>
+
             </div>
             {p}
         </div>

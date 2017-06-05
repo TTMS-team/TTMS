@@ -1,8 +1,7 @@
-require ('../../css/style.css');
+require ('../../css/loginStyle.css');
 
 import React from 'react';
 import {browserHistory} from 'react-router';
-
 
 export default class Login extends React.Component {
     onLogin(){

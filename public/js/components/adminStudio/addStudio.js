@@ -1,4 +1,5 @@
 require ('../../../css/style.css');
+require('../../../css/studioStyle.css');
 import React from 'react';
 import {browserHistory} from 'react-router';
 
@@ -31,14 +32,23 @@ export default class AddStudio extends React.Component {
     }
     
     render(){
-        return <div>
+        return <div id="addStudio">
             <div>
-                <label>演出厅名称</label><input type="text" ref="name"/>
-                <label>演出厅行数</label><input type="text" ref="row"/>
-                <label>演出厅列数</label><input type="text" ref="col"/>
+                
+                
+                <div class="form-group"  className="colStyle">
+                    <label className="studioLab">演出厅名称</label><input className="studioInput" type="text" ref="name"/>
+                </div>
+                <div className="colStyle">
+                    <label className="studioLab">演出厅行数</label><input  className="studioInput" type="text" ref="row"/>
+                </div>
+                <div className="colStyle">
+                    <label className="studioLab">演出厅列数</label><input className="studioInput" type="text" ref="col"/>
+                </div>
                 <label>演出厅是否可用</label><input type="text" ref="ava"/>
                 <label>演出厅介绍</label><input type="text" ref="int"/>
-                <button onClick={this.addStudio.bind(this)}>提交</button>
+
+                <button  className="addSubButton" onClick={this.addStudio.bind(this)}>提交</button>
             </div>
         </div>
 

@@ -86,15 +86,22 @@ export default class ModifyStudio extends React.Component {
         const ava=this.state.ava ===null ? oldInfo.studio_isavailable:this.state.ava;
             
         
-        return <div>
-            <label>演出厅名称</label><input type="text" value={name} ref="studio_name" onChange={this.onchangeName.bind(this)}/>
-            <label>座位行数</label><input type="text" value={row} ref="studio_row" onChange={this.onchangeRow.bind(this)}/>
-            <label>座位列数</label><input type="text" value={col} ref="studio_col" onChange={this.onchangeCol.bind(this)}/>
-            <label>演出厅是否可用</label><input type="text" ref="ava" value={ava} onChange={this.onchangeAva.bind(this)}/>
-            <label>演出厅介绍</label><input type="text" ref="int" value={int} onChange={this.onchangeInt.bind(this)}/>
+        return <div div id="addStudio">
+            <div className="colStyle">
+                <label class="studioLab">演出厅名称</label><input className="studioInput" type="text" value={name} ref="studio_name" onChange={this.onchangeName.bind(this)}/>
+            </div>
+            <div className="colStyle">
+                <label class="studioLab">座位行数</label><input className="studioInput"  type="text" value={row} ref="studio_row" onChange={this.onchangeRow.bind(this)}/>
+            </div>
+            <div className="colStyle">
+                <label class="studioLab">座位列数</label><input className="studioInput"  type="text" value={col} ref="studio_col" onChange={this.onchangeCol.bind(this)}/>
+            </div>
+    <label>演出厅是否可用</label><input type="text" ref="ava" value={ava} onChange={this.onchangeAva.bind(this)}/>
+    <label>演出厅介绍</label><input type="text" ref="int" value={int} onChange={this.onchangeInt.bind(this)}/>
 
 
-            <button onClick={this.upDateStudioModify.bind(this)}>确认修改</button>
+    <button  className="addSubButton" onClick={this.upDateStudioModify.bind(this)}>确认修改</button>
+
         </div>
     }
 }

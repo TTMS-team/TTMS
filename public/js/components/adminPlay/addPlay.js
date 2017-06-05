@@ -20,6 +20,11 @@ export default class AddPlay extends React.Component {
             "play_introduction":this.refs.int.value,
             "value.play_status":this.refs.status.value
             };
+        //if(!info.play_introduction||!info.play_lang_id||!info.play_length||!info.play_name||!info.play_ticket_price||!info.play_type_id||!info.value.play_status)
+        //{
+        //    alert("添加项均不能为空");
+        //    return;
+        //}
 
         this.props.addPlay(info);
     }
@@ -39,14 +44,20 @@ export default class AddPlay extends React.Component {
 
         return <div className="pageBody" >
            <div>
-               <label>剧目名称</label><input type="text" ref="name"/>
-               <label>剧目语言</label><input type="text" ref="lang"/>
-               <label>剧目类型</label><input type="text" ref="type"/>
-               <label>剧目时长</label><input type="text" ref="length"/>
-               <label>剧目票价</label><input type="text" ref="price"/>
-               <label>剧目状态</label><input type="text" ref="status"/>
-               <label>剧目介绍</label><input type="text" ref="int"/>
-               <button className="addSubButton" onClick={this.addPlay.bind(this)}>提交</button>
+               <div class="form-group" className="col">
+                    <label  className="split">剧目名称</label><input className="playInput" type="text" ref="name"/>
+                    <label  className="split">剧目语言</label><input  className="playInput" type="text" ref="lang"/>
+                    <label  className="split">剧目类型</label><input  className="playInput" type="text" ref="type"/>
+               </div>
+               <div className="col">
+                   <label  className="split">剧目时长</label><input className="playInput" type="text" ref="length"/>
+                   <label  className="split">剧目票价</label><input className="playInput" type="text" ref="price"/>
+                   <label  className="split">剧目状态</label><input className="playInput" type="text" ref="status"/>
+               </div>
+               <div className="col">
+                   <label  className="split">剧目介绍</label><input className="playInput1" type="text" ref="int"/>
+               </div>
+                   <button className="addSubButton" onClick={this.addPlay.bind(this)}>提交</button>
 
            </div>
         </div>

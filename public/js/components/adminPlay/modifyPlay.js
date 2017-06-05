@@ -98,17 +98,22 @@ export default class ModifyStudio extends React.Component {
 
 
 
-        return <div>
-            <label>剧目名称</label><input type="text" value={name} ref="name" onChange={this.onchangeName.bind(this)}/>
-            <label>剧目语言</label><input type="text" value={lang} ref="lang" onChange={this.onchangeLang.bind(this)}/>
-            <label>剧目类型</label><input type="text" value={type} ref="type" onChange={this.onchangeType.bind(this)}/>
-            <label>剧目时长</label><input type="text" ref="length" value={length} onChange={this.onchangeLength.bind(this)}/>
-            <label>剧目票价</label><input type="text" ref="price" value={price} onChange={this.onchangePrice.bind(this)}/>
-            <label>剧目介绍</label><input type="text" ref="int" value={int} onChange={this.onchangeInt.bind(this)}/>
-            <label>剧目状态</label><input type="text" ref="status" value={status} onChange={this.onchangeStatus.bind(this)}/>
+        return <div className="pageBody" >
+            <div class="form-group" className="col">
+                <label  className="split">剧目名称</label><input className="playInput" type="text" value={name} ref="name" onChange={this.onchangeName.bind(this)}/>
+                <label  className="split">剧目语言</label><input className="playInput" type="text" value={lang} ref="lang" onChange={this.onchangeLang.bind(this)}/>
+                <label  className="split">剧目类型</label><input className="playInput" type="text" value={type} ref="type" onChange={this.onchangeType.bind(this)}/>
+            </div>
+            <div className="col">
+                <label  className="split">剧目时长</label><input  className="playInput"type="text" ref="length" value={length} onChange={this.onchangeLength.bind(this)}/>
+                <label  className="split">剧目票价</label><input  className="playInput" type="text" ref="price" value={price} onChange={this.onchangePrice.bind(this)}/>
+                <label  className="split">剧目状态</label><input  className="playInput" type="text" ref="status" value={status} onChange={this.onchangeStatus.bind(this)}/>
+            </div>
+            <div className="col">
+                <label  className="split">剧目介绍</label><input className="playInput1" type="text" ref="int" value={int} onChange={this.onchangeInt.bind(this)}/>
+            </div>.
 
-
-            <button onClick={this.updatePlayModify.bind(this)}>确认修改</button>
+            <button className="addSubButton" onClick={this.updatePlayModify.bind(this)}>确认修改</button>
         </div>
     }
 }

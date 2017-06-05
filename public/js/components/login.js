@@ -12,6 +12,7 @@ export default class Login extends React.Component {
             alert("用户名密码不能为空！")
             return;
         }
+
         this.props.onLogin(userName,passWord);
 
     }

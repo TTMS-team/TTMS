@@ -41,7 +41,7 @@ export default class Employee extends React.Component {
     render() {
         var p=this.props.employeeList.map((value,index)=>{
 
-            return <div className="conductor">
+            return <div>
                 <span className="span1">{value.emp_id}</span>
                 <span className="span2">{value.emp_name}</span>
                 <span className="span3">{value.emp_sex}</span>
@@ -56,9 +56,9 @@ export default class Employee extends React.Component {
         return <div className="mainView">
             <div>
 
-                    <input type="text" ref="searchInput" placeholder="请输入员工ID"/>
-                    <button onClick={this.searchEmployee.bind(this)}>查询</button>
-                    <button onClick={this.addEmployee.bind(this)}>添加</button>
+                    <input  className="search" type="text" ref="searchInput" placeholder="请输入员工ID"/>
+                    <button   className="searchButton"onClick={this.searchEmployee.bind(this)}>查询</button>
+                    <button  className="searchButton" onClick={this.addEmployee.bind(this)}>添加</button>
 
                    
             </div>

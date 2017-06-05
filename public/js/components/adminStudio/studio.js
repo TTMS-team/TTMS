@@ -5,14 +5,14 @@ import {browserHistory} from 'react-router';
 export default class Studio extends React.Component {
     componentWillMount(){
         this.props.getStudioList();
-    } 
-     
+    }
 
-    
+
+
     addStudio(){
         browserHistory.push('/addStudio');
     }
-    
+
     searchStudio(){
         var id=this.refs.searchInput.value;
         this.props.searchStudioById(id);
@@ -34,7 +34,7 @@ export default class Studio extends React.Component {
         }
     }
 
-    
+
     render() {
         // {"studio_col_count":8,
         // "studio_id":6,
@@ -48,9 +48,9 @@ export default class Studio extends React.Component {
 
                     <span className="studioSpan">{value.studio_id}</span>
                     <span className="studioSpan">{value.studio_name}</span>
-                    <span className="studioSpan1">{value.studio_row}</span>
-                    <span className="studioSpan1">{value.studio_col}</span>
-                    <span>{value.studio_isavailable}</span>
+                    <span className="studioSpan">{value.studio_row}</span>
+                    <span className="studioSpan">{value.studio_col}</span>
+                    <span className="studioSpan1" >{value.studio_isavailable}</span>
                     <input  className="studioButton" type="button" value="修改" onClick={this.modifyStudio.bind(this,value.studio_id)}/>
                     <input    className="studioButton1" type="button" value="删除" onClick={this.deleteStudio.bind(this,value.studio_id)}/>
                 </div>
@@ -66,15 +66,14 @@ export default class Studio extends React.Component {
                 <button  className="searchButton" onClick={this.addStudio.bind(this)}>添加</button>
             </div>
             <div>
-                <span className="table">演出厅ID</span>
-                <span className="table">演出厅名称</span>
-                <span className="table">演出厅行数</span>
-                <span className="table">演出厅列数</span>
-                <span>演出厅是否可用</span>
+                <span className="stuSpan">演出厅ID</span>
+                <span className="stuSpan">演出厅名称</span>
+                <span className="stuSpan">演出厅行数</span>
+                <span className="stuSpan">演出厅列数</span>
+                <span className="stuSpan">演出厅是否可用</span>
 
             </div>
             {p}
         </div>
     }
 }
-

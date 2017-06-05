@@ -19,6 +19,7 @@ export default class AddStudio extends React.Component {
             "studio_introduction":this.refs.int.value,
             "studio_isavailable":this.refs.ava.value
         };
+
         this.props.addStudio(info);
     }
 
@@ -45,8 +46,12 @@ export default class AddStudio extends React.Component {
                 <div className="colStyle">
                     <label className="studioLab">演出厅列数</label><input className="studioInput" type="text" ref="col"/>
                 </div>
-                <label>演出厅是否可用</label><input type="text" ref="ava"/>
-                <label>演出厅介绍</label><input type="text" ref="int"/>
+                <div className="colStyle">
+                    <label className="studioLab" >演出厅是否可用</label><input className="studioInput1" type="text" ref="ava"/>
+                </div>
+                <div className="colStyle">
+                    <label className="studioLab">演出厅介绍</label><input className="studioInput" type="text" ref="int"/>
+                </div>
 
                 <button  className="addSubButton" onClick={this.addStudio.bind(this)}>提交</button>
             </div>

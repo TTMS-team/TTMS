@@ -11,7 +11,7 @@ export default class ModifyStudio extends React.Component {
             col: null,
             ava:null,
             int:null
-           
+
 
 
         }
@@ -69,7 +69,7 @@ export default class ModifyStudio extends React.Component {
             int: this.refs.int.value
         });
     }
-     
+
     render() {
         console.log(oldInfo)
         var oldInfo=this.props.oldStudioInfo[0];
@@ -84,25 +84,29 @@ export default class ModifyStudio extends React.Component {
         const col=this.state.col ===null ? oldInfo.studio_col_count:this.state.col;
         const int=this.state.int ===null ? oldInfo.studio_introduction:this.state.int;
         const ava=this.state.ava ===null ? oldInfo.studio_isavailable:this.state.ava;
-            
-        
+
+
         return <div div id="addStudio">
-            <div className="colStyle">
-                <label class="studioLab">演出厅名称</label><input className="studioInput" type="text" value={name} ref="studio_name" onChange={this.onchangeName.bind(this)}/>
-            </div>
-            <div className="colStyle">
-                <label class="studioLab">座位行数</label><input className="studioInput"  type="text" value={row} ref="studio_row" onChange={this.onchangeRow.bind(this)}/>
-            </div>
-            <div className="colStyle">
-                <label class="studioLab">座位列数</label><input className="studioInput"  type="text" value={col} ref="studio_col" onChange={this.onchangeCol.bind(this)}/>
-            </div>
-    <label>演出厅是否可用</label><input type="text" ref="ava" value={ava} onChange={this.onchangeAva.bind(this)}/>
-    <label>演出厅介绍</label><input type="text" ref="int" value={int} onChange={this.onchangeInt.bind(this)}/>
+            <div>
+                <div class="form-group"  className="colStyle">
+                    <label className="studioLab1">演出厅名称</label><input className="studioInput2" type="text" value={name} ref="studio_name" onChange={this.onchangeName.bind(this)}/>
+                </div>
+                <div className="colStyle">
+                    <label className="studioLab1">座位行数</label><input className="studioInput2"  type="text" value={row} ref="studio_row" onChange={this.onchangeRow.bind(this)}/>
+                </div>
+                <div className="colStyle">
+                    <label  className="studioLab1">座位列数</label><input className="studioInput2"  type="text" value={col} ref="studio_col" onChange={this.onchangeCol.bind(this)}/>
+                </div>
+                <div className="colStyle">
+                    <label   className="studioLab1">演出厅是否可用</label><input className="studioInput2" type="text" ref="ava" value={ava} onChange={this.onchangeAva.bind(this)}/>
+                </div>
+                <div className="colStyle">
+                    <label  className="studioLab1">演出厅介绍</label><input  className="studioInput2" type="text" ref="int" value={int} onChange={this.onchangeInt.bind(this)}/>
+                </div>
 
+                <button  className="addSubButton" onClick={this.upDateStudioModify.bind(this)}>确认修改</button>
 
-    <button  className="addSubButton" onClick={this.upDateStudioModify.bind(this)}>确认修改</button>
-
+            </div>
         </div>
     }
 }
-

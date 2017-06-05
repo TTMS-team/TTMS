@@ -9,39 +9,21 @@
     height: 62px;
     overflow: hidden;
     border-bottom: 1px solid #d6dfea;
-    font-size:xx-large;
+    font-size:50px;
+    font-family: "Microsoft YaHei";
+    text-align: center;
 }
 
 .table
 {
     font-family: "Microsoft YaHei";
-    font-size: 18px;
+    font-size: 20px;
     margin-left: 70px;
     width: 12.5%;
     margin-top: 50px;
     height: 40px;
     text-align: center;
-
-}
-.table2
-{
-    width: 12.5%;
-    margin-left: 80px;
-    text-align: center;
-
-}
-.table1
-{
-    position:relative;
-    text-align:center;
-    width: 12.5%;
-    margin-left:60px ;
-}
-.table3
-{
-    width: 12.5%;
-    margin-left:90px ;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 .conductor
@@ -54,10 +36,7 @@
 {
     margin-left: 150px;
 }
-.split
-{
-    margin-right: 30px;
-}
+
 
 /*搜索框*/
 .search
@@ -68,7 +47,7 @@
     border: 0;
     width: 200px;
     _top: 4px;
-    margin-left: 55%;
+    margin-left: 58%;
 }
 /*搜索按钮*/
 .searchButton
@@ -83,39 +62,8 @@
     background-position: left top;
     color: #555;
     font-size: 14px;
-    margin-left: 5px;
+    margin-left: 3px;
 }
-/*修改按钮*/
-.modifyButton
-{
-    border:2px solid #a1a1a1;
-    width: 79px;
-    height: 29px;
-    line-height: 29px;
-    text-align: center;
-    border: 0;
-    outline: 0;
-    background-position: left top;
-    color: #555;
-    font-size: 14px;
-    position:fixed;
-    right:240px;
-}
-/*删除按钮*/
-.deleteButton
-{
-    border:2px solid #a1a1a1;
-    width: 79px;
-    height: 29px;
-    line-height: 29px;
-    text-align: center;
-    border: 0;
-    outline: 0;
-    background-position: left top;
-    color: #555;
-    font-size: 14px;
-    position:fixed;
-    right:155px;
-}
+
 
 

@@ -1,0 +1,13 @@
+.conductorSpan
+{
+    text-align: center;
+    font-size:35px;
+    font-family: "Microsoft YaHei";
+    width: 150px;
+    height: 15px;
+    margin-top: 20px;
+    margin-left: 10%;
+    display:-moz-inline-box; /* css注释：for ff2 */
+    display:inline-block;
+
+}

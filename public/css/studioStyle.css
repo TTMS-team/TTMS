@@ -17,6 +17,7 @@
 .studioLab
 {
     margin-right: 30px;
+    font-size: large;
 }
 .studioInput
 {
@@ -28,14 +29,59 @@
     margin-top: 60px;
     font-size:12px;
     margin-left: 35px;
+
 }
 
 .studioSpan
 {
     font-size: 18px;
-    margin-left: 120px;
-    width: 12.5%;
-    margin-top: 50px;
-    height: 40px;
+    margin-left: 65px;
+    width: 10%;
     text-align: center;
+    display:-moz-inline-box;
+    display:inline-block;
+}
+
+.studioSpan1
+{
+    font-size: 18px;
+    margin-left: 85px;
+    width: 10%;
+    text-align: center;
+    display:-moz-inline-box;
+    display:inline-block;
+}
+
+.studioButton
+{
+    border:2px solid #a1a1a1;
+    width: 79px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    background-position: left top;
+    color: #555;
+    font-size: 14px;
+    margin-left: 60px;
+    display:-moz-inline-box;
+    display:inline-block;
+}
+
+.studioButton1
+{
+    border:2px solid #a1a1a1;
+    width: 79px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    background-position: left top;
+    color: #555;
+    font-size: 14px;
+    margin-left: 3px;
+    display:-moz-inline-box;
+    display:inline-block;
 }

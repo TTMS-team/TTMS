@@ -41,10 +41,10 @@ export default class Studio extends React.Component {
                 <div>
                     <span className="studioSpan">{value.studio_id}</span>
                     <span className="studioSpan">{value.studio_name}</span>
-                    <span className="studioSpan">{value.studio_row}</span>
-                    <span className="studioSpan">{value.studio_col}</span>
-                    <input  className="modifyButton" type="button" value="修改" onClick={this.modifyStudio.bind(this,value.studio_id)}/>
-                    <input    className="deleteButton" type="button" value="删除" onClick={this.deleteStudio.bind(this,value.studio_id)}/>
+                    <span className="studioSpan1">{value.studio_row}</span>
+                    <span className="studioSpan1">{value.studio_col}</span>
+                    <input  className="studioButton" type="button" value="修改" onClick={this.modifyStudio.bind(this,value.studio_id)}/>
+                    <input    className="studioButton1" type="button" value="删除" onClick={this.deleteStudio.bind(this,value.studio_id)}/>
                 </div>
             </div>
         });

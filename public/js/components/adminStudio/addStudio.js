@@ -27,13 +27,13 @@ export default class AddStudio extends React.Component {
         return <div id="addStudio">
             <div>
                 <div class="form-group"  className="colStyle">
-                    <label class="studioLab">演出厅名称</label><input className="studioInput" type="text" ref="name"/>
+                    <label className="studioLab">演出厅名称</label><input className="studioInput" type="text" ref="name"/>
                 </div>
                 <div className="colStyle">
-                    <label class="studioLab">演出厅行数</label><input  className="studioInput" type="text" ref="row"/>
+                    <label className="studioLab">演出厅行数</label><input  className="studioInput" type="text" ref="row"/>
                 </div>
                 <div className="colStyle">
-                    <label class="studioLab">演出厅列数</label><input className="studioInput" type="text" ref="col"/>
+                    <label className="studioLab">演出厅列数</label><input className="studioInput" type="text" ref="col"/>
                 </div>
 
                 <button  className="addSubButton" onClick={this.addStudio.bind(this)}>提交</button>

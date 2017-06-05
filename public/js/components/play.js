@@ -5,7 +5,6 @@ import {browserHistory} from 'react-router';
 export default class Play extends React.Component {
 
 
-git
 
     render() {
 

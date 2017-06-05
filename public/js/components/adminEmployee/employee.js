@@ -37,14 +37,14 @@ export default class Employee extends React.Component {
         var p=this.props.employeeList.map((value,index)=>{
 
             return <div className="conductor">
-                <span className="table1">{value.emp_id}</span>
-                <span className="table1">{value.emp_name}</span>
-                <span className="table3">{value.emp_sex}</span>
-                <span className="table3">{value.emp_age}</span>
-                <span className="table2">{value.emp_position}</span>
-                <span className="table1">{value.emp_tel_num}</span>
-                <input className="modifyButton"  type="button" value="修改"  onClick={this.modifyEmployee.bind(this,value.emp_id)}/>
-                <input className="deleteButton"  type="button" value="删除" onClick={this.deleteEmployee.bind(this,value.emp_id)}/>
+                <span className="span1">{value.emp_id}</span>
+                <span className="span2">{value.emp_name}</span>
+                <span className="span3">{value.emp_sex}</span>
+                <span className="span3">{value.emp_age}</span>
+                <span className="span2">{value.emp_position}</span>
+                <span className="span4">{value.emp_tel_num}</span>
+                <input className="empButton"  type="button" value="修改"  onClick={this.modifyEmployee.bind(this,value.emp_id)}/>
+                <input className="empButton1"  type="button" value="删除" onClick={this.deleteEmployee.bind(this,value.emp_id)}/>
             </div>
         });
         

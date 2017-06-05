@@ -5,11 +5,10 @@ export default (state = {employeeList:[],deleteTip:false,addEmployeeTip: false,u
         state.updateEmployeeTip=false;
         state.employeeList = action.data;
         return Object.assign({}, state);
-    }else if(action.type==="GET_DELETE_RESULT"){
+    }else if(action.type==="GET_DELETE_EMPLOYEE_RESULT"){
         state.deleteTip = action.data;
         return Object.assign({}, state);
     }else if(action.type === 'GET_ADD_EMPLOYEE_TIP') {
-
         state.addEmployeeTip = action.data;
         return Object.assign({}, state);
     }else if(action.type==="GET_UPDATE_EMPLOYEE_TIP"){

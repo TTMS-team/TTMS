@@ -9,7 +9,7 @@ export default store => next => action => {
     }else if(action.type==="DELETE_EMPLOYEE"){
         request.get(`/deleteEmployee/${action.emp_id}`)
             .end((err, res) => {
-                next({type:"GET_DELETE_RESULT", data:res.body });
+                next({type:"GET_DELETE_EMPLOYEE_RESULT", data:res.body });
             });
     }else if (action.type === "GET_OLD_EMPLOYEE_INFO") {
         request.get(`/getOldEmployeeInfo/${action.emp_id}`)
@@ -29,6 +29,11 @@ export default store => next => action => {
             .end((err, res) => {
                 console.log(typeof res.body);
                 next({type:"GET_UPDATE_EMPLOYEE_TIP", data: res.body});
+            });
+    }else if (action.type === "SEARCH_EMPLOYEE_BY_ID") {
+        request.get(`/searchEmployee/${action.emp_id}`)
+            .end((err, res) => {
+                next({type:"SHOW_EMPLOYEE_LIST", data: JSON.parse(res.body)});
             });
     }
     else

@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
         getOldStudioInfo:(emp_id)=>{
             dispatch({type:"SEARCH_STUDIO_BY_ID",emp_id});
         },
-        upDateStudioModify:(info)=>{
+        updateStudioModify:(info)=>{
             dispatch({type:"UPDATE_STUDIO_MODIFY",info})
         }
     };

@@ -1,9 +1,11 @@
 require ('../../css/style.css');
 import React from 'react';
 import Title from './title';
-import Employee from './adminEmployee/employee';
-import Play from './play';
+
 import Schedule from './schedule';
+import Employee from './adminEmployee/employee';
+import Play from './adminPlay/play';
+
 import Studio from './adminStudio/studio';
 import Ticket from './ticket';
 
@@ -21,16 +23,28 @@ export default class AdminPage extends React.Component {
                 p=<Schedule/>;
                 break;
             case "play":
-                p=<Play/>;
+                p=<Play getPlayList={this.props.getPlayList}
+                        playList={this.props.playList} 
+                        searchPlayById={this.props.searchPlayById} 
+                        deletePlay={this.props.deletePlay}
+                        deletePlayTip={this.props.deletePlayTip}/>;
                 break;
             case "studio":
-                p=<Studio getStudioList={this.props.getStudioList} studioList={this.props.studioList} searchStudioById={this.props.searchStudioById} deleteStudio={this.props.deleteStudio} deleteStudioTip={this.props.deleteStudioTip}/>;
+                p=<Studio getStudioList={this.props.getStudioList}
+                          studioList={this.props.studioList}
+                          searchStudioById={this.props.searchStudioById} 
+                          deleteStudio={this.props.deleteStudio} 
+                          deleteStudioTip={this.props.deleteStudioTip}/>;
                 break;
             case "ticket":
                 p=<Ticket/>;
                 break;
             case "employee":
-                p=<Employee deleteEmployee={this.props.deleteEmployee} searchEmployeeById={this.props.searchEmployeeById} getEmployeeList={this.props.getEmployeeList} employeeList={this.props.employeeList} deleteEmployeeTip={this.props.deleteEmployeeTip}/>;
+                p=<Employee deleteEmployee={this.props.deleteEmployee}
+                            searchEmployeeById={this.props.searchEmployeeById}
+                            getEmployeeList={this.props.getEmployeeList} 
+                            employeeList={this.props.employeeList}
+                            deleteEmployeeTip={this.props.deleteEmployeeTip}/>;
                 break;
 
         }

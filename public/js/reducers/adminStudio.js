@@ -8,7 +8,7 @@ export default (state = {studioList:[],deleteTip:false,addStudioTip: false,updat
         state.studioList = action.data;
         
         return Object.assign({}, state);
-    }else if(action.type==="GET_DELETE_RESULT"){
+    }else if(action.type==="GET_DELETE_STUDIO_RESULT"){
         state.deleteTip = action.data;
         return Object.assign({}, state);
     }else if(action.type === 'GET_ADD_STUDIO_TIP') {

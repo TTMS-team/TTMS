@@ -4,8 +4,9 @@ import adminPage from './adminPage';
 import conductorPage from './conductorPage';
 import schedulePage from './schedulePage';
 import seatPage from './seatPage';
-import employee from './employee';
-import studio from './studio';
+import employee from './adminEmployee';
+import studio from './adminStudio';
+import play from './adminPlay';
 
 export default combineReducers({
     login,
@@ -14,5 +15,6 @@ export default combineReducers({
     schedulePage,
     seatPage,
     employee,
-    studio
+    studio,
+    play
 });

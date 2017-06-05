@@ -10,7 +10,12 @@ export default class Employee extends React.Component {
     }
 
     searchEmployee(){
+        
         var id=this.refs.searchInput.value;
+        if(!id){
+            alert("输入不得为空！");
+            return;
+        }
         this.props.searchEmployeeById(id);
     }
 
@@ -50,7 +55,7 @@ export default class Employee extends React.Component {
         
         return <div className="mainView">
             <div>
-                    <input type="text" ref="searchInput"/>
+                    <input type="text" ref="searchInput" placeholder="请输入员工ID"/>
                     <button onClick={this.searchEmployee.bind(this)}>查询</button>
                     <button onClick={this.addEmployee.bind(this)}>添加</button>
             </div>

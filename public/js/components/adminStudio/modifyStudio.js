@@ -8,7 +8,9 @@ export default class ModifyStudio extends React.Component {
         this.state = {
             name: null,
             row: null,
-            col: null
+            col: null,
+            ava:null,
+            int:null
            
 
 
@@ -28,13 +30,16 @@ export default class ModifyStudio extends React.Component {
     }
 
     upDateStudioModify(){
-        this.props.upDateStudioModify({
+        this.props.updateStudioModify({
             id:this.props.location.query.id,
 
             name:this.refs.studio_name.value,
             row:this.refs.studio_row.value,
-            col:this.refs.studio_col.value
-           
+            col:this.refs.studio_col.value,
+            ava: this.refs.ava.value,
+            int: this.refs.int.value
+
+
         });
     }
 
@@ -46,29 +51,47 @@ export default class ModifyStudio extends React.Component {
 
     onchangeRow(){
         this.setState({
-            sex: this.refs.studio_row.value
+            row: this.refs.studio_row.value
         });
     }
     onchangeCol(){
         this.setState({
-            age: this.refs.studio_col.value
+            col: this.refs.studio_col.value
         });
     }
-   
+    onchangeAva(){
+        this.setState({
+            ava: this.refs.ava.value
+        });
+    }
+    onchangeInt(){
+        this.setState({
+            int: this.refs.int.value
+        });
+    }
      
     render() {
-
+        console.log(oldInfo)
         var oldInfo=this.props.oldStudioInfo[0];
-
+        // {"studio_col_count":8,
+        // "studio_id":6,
+        // "studio_introduction":"1号",
+        // "studio_isavailable":"true",
+        // "studio_name":"3号厅",
+        // "studio_row_count":10}
         const name=this.state.name ===null ? oldInfo.studio_name:this.state.name;
-        const row=this.state.sex ===null ? oldInfo.studio_sex:this.state.row;
-        const col=this.state.age ===null ? oldInfo.studio_age:this.state.col;
+        const row=this.state.row ===null ? oldInfo.studio_row_count:this.state.row;
+        const col=this.state.col ===null ? oldInfo.studio_col_count:this.state.col;
+        const int=this.state.int ===null ? oldInfo.studio_introduction:this.state.int;
+        const ava=this.state.ava ===null ? oldInfo.studio_isavailable:this.state.ava;
+            
         
         return <div>
             <label>演出厅名称</label><input type="text" value={name} ref="studio_name" onChange={this.onchangeName.bind(this)}/>
             <label>座位行数</label><input type="text" value={row} ref="studio_row" onChange={this.onchangeRow.bind(this)}/>
             <label>座位列数</label><input type="text" value={col} ref="studio_col" onChange={this.onchangeCol.bind(this)}/>
-
+            <label>演出厅是否可用</label><input type="text" ref="ava" value={ava} onChange={this.onchangeAva.bind(this)}/>
+            <label>演出厅介绍</label><input type="text" ref="int" value={int} onChange={this.onchangeInt.bind(this)}/>
 
 
             <button onClick={this.upDateStudioModify.bind(this)}>确认修改</button>

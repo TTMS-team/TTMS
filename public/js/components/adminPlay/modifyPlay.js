@@ -1,4 +1,6 @@
 import React from 'react';
+import ReturnBtn from '../returnBtn';
+
 import {browserHistory} from 'react-router';
 
 
@@ -99,6 +101,7 @@ export default class ModifyStudio extends React.Component {
 
 
         return <div className="pageBody" >
+            <ReturnBtn/>
             <div class="form-group" className="col">
                 <label  className="split">剧目名称</label><input className="playInput" type="text" value={name} ref="name" onChange={this.onchangeName.bind(this)}/>
                 <label  className="split">剧目语言</label><input className="playInput" type="text" value={lang} ref="lang" onChange={this.onchangeLang.bind(this)}/>

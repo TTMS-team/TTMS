@@ -18,7 +18,26 @@ export default class AdminPage extends React.Component {
     onAside(e){
         this.props.getPresentShow(e.target.className);
     }
-
+    turnBack(){
+        var presentShow=this.props.presentShow;
+        switch (presentShow){
+            case "schedule":
+                this.props.getScheduleList();
+                break;
+            case "play":
+                this.props.getPlayList();
+                break;
+            case "studio":
+                this.props.getStudioList();
+                break;
+            case "employee":
+                this.props.getEmployeeList();
+                break;
+            case "ticket":
+                this.props.getTicketList();
+                break;
+        }
+    }
     render() {
 
         var p=<Schedule getScheduleList={this.props.getScheduleList}
@@ -60,6 +79,7 @@ export default class AdminPage extends React.Component {
 
         return <div className="pageBody">
             <Title username={this.props.location.query.emp_id}/>
+            <input type="button" value="回上页" onClick={this.turnBack.bind(this)}/>
             <div id="menu">
             <ul id="aside" onClick={this.onAside.bind(this)} >
                <li className="schedule" >演出计划</li>

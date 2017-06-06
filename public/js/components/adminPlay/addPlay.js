@@ -1,4 +1,6 @@
 require ('../../../css/style.css');
+import ReturnBtn from '../returnBtn';
+
 import React from 'react';
 import {browserHistory} from 'react-router';
 
@@ -43,6 +45,7 @@ export default class AddPlay extends React.Component {
         
 
         return <div className="pageBody" >
+            <ReturnBtn/>
            <div>
                <div class="form-group" className="col">
                     <label  className="split">剧目名称</label><input className="playInput" type="text" ref="name"/>

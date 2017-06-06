@@ -1,5 +1,6 @@
 import React from 'react';
 import {browserHistory} from 'react-router';
+import ReturnBtn from '../returnBtn';
 
 
 export default class ModifyStudio extends React.Component {
@@ -80,6 +81,7 @@ export default class ModifyStudio extends React.Component {
 
 
         return <div div id="addStudio">
+            <ReturnBtn/>
             <div>
                 <div class="form-group"  className="colStyle">
                     <label className="studioLab1">演出厅名称</label><input className="studioInput2" type="text" value={name} ref="studio_name" onChange={this.onchangeName.bind(this)}/>

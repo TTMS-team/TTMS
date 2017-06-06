@@ -2,6 +2,7 @@ require ('../../../css/style.css');
 require('../../../css/employeeStyle.css');
 import React from 'react';
 import {browserHistory} from 'react-router';
+import ReturnBtn from '../returnBtn';
 
 
 export default class AddEmployee extends React.Component {
@@ -22,9 +23,7 @@ export default class AddEmployee extends React.Component {
         this.props.addEmployee(info);
     }
 
-    back(){
-        browserHistory.push('/adminPage');
-    }
+  
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.addEmployeeTip) {
@@ -39,7 +38,7 @@ export default class AddEmployee extends React.Component {
     render() {
 
         return <div className="pageBody" >
-            <button >返回</button>
+            <ReturnBtn/>
             <div class="form-group" className="col">
                <label className="split"> 姓名 </label><input type="text" className="addInput"  ref="emp_name"/>
                 <label className="split"> 性 别 </label><input type="text" className="addInput" ref="emp_sex"/>

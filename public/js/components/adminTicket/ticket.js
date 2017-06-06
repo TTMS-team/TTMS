@@ -50,7 +50,6 @@ export default class Ticket extends React.Component {
             <div>
                 <span>座位ID</span>
                 <span>演出计划ID</span>
-                <span>演出计划ID</span>
                 <span>票价</span>
                 <span>票状态</span>
                 <span>票锁定时间</span>

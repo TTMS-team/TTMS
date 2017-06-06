@@ -13,7 +13,7 @@ export default (state = {playList:[],deleteTip:false,addPlayTip: false,updatePla
         state.addPlayTip = action.data;
         return Object.assign({}, state);
     }else if(action.type==="GET_UPDATE_PLAY_TIP"){
-        state.updateEmployeeTip = action.data;
+        state.updatePlayTip = action.data;
         return Object.assign({}, state);
     }
     return state;

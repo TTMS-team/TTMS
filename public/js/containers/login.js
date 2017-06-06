@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         
-        onLogin:()=>{
-            dispatch({type:"LOGIN_SUBMIT"});
+        onLogin:(info)=>{
+            dispatch({type:"LOGIN_SUBMIT",info});
         }
     };
 };

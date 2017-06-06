@@ -20,7 +20,8 @@ export default class ConductorPage extends React.Component {
 
         var playList=this.props.playList.map((value,key)=>{
             return <div >
-                    <div >
+
+                <div >
                         <span className="conductorSpan">{value.play_name}</span>
                         <span className="conductorSpan">{value.play_type_id}</span>
                         <span className="conductorSpan">{value.play_length}</span>
@@ -33,7 +34,7 @@ export default class ConductorPage extends React.Component {
 
 
         return <div>
-            <Title username={this.props.username}/>
+            <Title username={this.props.location.query.emp_id}/>
             <div>
                 <input  className="search" type="text" placeholder="请输入影片名"/>
                 <button className="searchButton">查找</button>

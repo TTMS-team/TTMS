@@ -25,7 +25,7 @@ export default class ModifyStudio extends React.Component {
 
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.updateStudioTip) {
+        if (nextProps.updatePlayTip) {
             alert("修改成功！");
             browserHistory.push('/adminPage');
         }
@@ -33,7 +33,7 @@ export default class ModifyStudio extends React.Component {
 
     updatePlayModify(){
         this.props.updatePlayModify({
-            id:this.props.location.query.id,
+            id:this.props.location.query.id,    
 
             name: this.refs.name.value,
             lang: this.refs.lang.value,

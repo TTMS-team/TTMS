@@ -1,11 +1,10 @@
 import request from 'superagent';
 
 export default store => next => action => {
-    if (action.type === 'GET_SCHEDULE') {
-        request.get(`/getSchedule/${action.play_id}`)
+    if (action.type === 'GET_SCHEDULE_LIST_BY_PLAY_ID') {
+        request.get(`/getScheduleListByPlayId/${action.play_id}`)
             .end((err, res) => {
-                console.log(res.body);
-                next({type:"SHOW_SCHEDULE", data: res.body});
+                next({type:"SHOW_SCHEDULE_LIST", data: JSON.parse(res.body)});
             });
     }
     else

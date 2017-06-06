@@ -79,7 +79,8 @@
     border: 0;
     outline: 0;
     background-position: left top;
-    color: #555;
+    background: #cccccc;
+    color: #000080;
     font-size: 14px;
     margin-left: 40px;
     display:-moz-inline-box;
@@ -95,7 +96,8 @@
     border: 0;
     outline: 0;
     background-position: left top;
-    color: #555;
+    background: #cccccc;
+    color: #000080;
     font-size: 14px;
     margin-left: 3px;
     display:-moz-inline-box;

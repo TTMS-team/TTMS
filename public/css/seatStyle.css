@@ -1,0 +1,9 @@
+.screen
+{
+    border:2px solid #a1a1a1;
+    width: 70%;
+    height: 80px;
+    margin-left: 15%;
+    color: #bbbbbb;
+    margin-top: 10px;
+}

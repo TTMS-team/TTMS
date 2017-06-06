@@ -52,7 +52,7 @@ export default class Studio extends React.Component {
                     <span className="studioSpan">{value.studio_col}</span>
                     <span className="studioSpan1" >{value.studio_isavailable}</span>
                     <input  className="studioButton" type="button" value="修改" onClick={this.modifyStudio.bind(this,value.studio_id)}/>
-                    <input    className="studioButton1" type="button" value="删除" onClick={this.deleteStudio.bind(this,value.studio_id)}/>
+                    <button   className="studioButton1 glyphicon glyphicon-trash"   onClick={this.deleteStudio.bind(this,value.studio_id)}/>
                 </div>
             </div>
         });
@@ -62,8 +62,8 @@ export default class Studio extends React.Component {
             <div>
 
                 <input  className="search" type="text" ref="searchInput" placeholder="请输入演出厅ID" />
-                <button  className="searchButton" onClick={this.searchStudio.bind(this)}>查询</button>
-                <button  className="searchButton" onClick={this.addStudio.bind(this)}>添加</button>
+                <button  className="searchButton glyphicon glyphicon-search" onClick={this.searchStudio.bind(this)}> 查询</button>
+                <button  className="searchButton glyphicon glyphicon-plus" onClick={this.addStudio.bind(this)}> 添加</button>
             </div>
             <div>
                 <span className="stuSpan">演出厅ID</span>

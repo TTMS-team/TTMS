@@ -20,7 +20,7 @@ export default store => next => action => {
     }else if(action.type === "SEARCH_STUDIO_BY_ID") {
         request.get(`/searchStudio/${action.studio_id}`)
             .end((err, res) => {
-                console.log(res.body)
+                // console.log(res.body)
                 next({type:"SHOW_STUDIO_LIST", data: JSON.parse(res.body)});
             });
     }else if(action.type==="UPDATE_STUDIO_MODIFY"){

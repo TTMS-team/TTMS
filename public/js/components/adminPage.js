@@ -1,6 +1,8 @@
 require ('../../css/style.css');
 require('../../css/adminInterfaceFramework.css');
 require('../../css/playStyle.css');
+require('../../css/scheduleStyle.css');
+require('../../css/ticketStyle.css');
 
 import React from 'react';
 import Title from './title';

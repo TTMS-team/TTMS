@@ -1,0 +1,121 @@
+.scheduleSpan
+ {
+
+     font-family: "Microsoft YaHei";
+     font-size: 20px;
+     margin-left: 40px;
+     width: 12%;
+     margin-top: 10px;
+     height: 40px;
+     text-align: center;
+     margin-bottom: 20px;
+    display:-moz-inline-box;
+    display:inline-block;
+ }
+
+.scheduleSpan1
+{
+
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+    margin-left: 50px;
+    width: 9%;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    display:-moz-inline-box;
+    display:inline-block;
+}
+
+.scheduleSpan2
+{
+
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+    margin-left: 65px;
+    width: 9%;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    display:-moz-inline-box;
+    display:inline-block;
+}
+.scheduleSpan3
+{
+
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+    margin-left: 70px;
+    width: 9%;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    display:-moz-inline-box;
+    display:inline-block;
+}
+.scheduleSpan4
+{
+
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+    margin-left: 79px;
+    width: 9%;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    display:-moz-inline-box;
+    display:inline-block;
+}
+
+.scheduleButton
+{
+    border:2px solid #a1a1a1;
+    width: 79px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    background-position: left top;
+    background: #cccccc;
+    color: #000080;
+    font-size: 14px;
+    margin-left: 5px;
+    display:-moz-inline-box;
+    display:inline-block;
+}
+.scheduleButton1
+{
+    border:2px solid #a1a1a1;
+    width: 79px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    background-position: left top;
+    background: #cccccc;
+    color: #000080;
+    font-size: 14px;
+    margin-left: 3px;
+    display:-moz-inline-box;
+    display:inline-block;
+}
+
+.schedule_Span
+{
+
+    font-family: "Microsoft YaHei";
+    font-size: 25px;
+    margin-left: 5%;
+    width: 12.5%;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    display:-moz-inline-box;
+    display:inline-block;
+}
+.title1
+{
+    color: #00b3ee;
+}

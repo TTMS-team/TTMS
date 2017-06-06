@@ -7,13 +7,13 @@
     width: 1275px;
     margin: 20px;
     height: 575px;
-    border:1px solid #a1a1a1;
+    border:1px;
     padding:20px 20px;
 }
 
 #aside
 {
-    border:1px solid #a1a1a1;
+    border:1px ;
     padding:20px 20px;
     border-radius:20px;
     height:470px;
@@ -30,12 +30,12 @@
 #menu ul li
 {
     height: 60px;
-    width: 150px;
+    width: 200px;
     margin-top: 25px;
     font-family: "Microsoft YaHei";
     font-size: 24px;
     text-align: center;
-    background: #5890AD;
+    background: #bbbbbb;
 }
 .mainView
 {

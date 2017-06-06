@@ -22,6 +22,10 @@ export default class AddEmployee extends React.Component {
         this.props.addEmployee(info);
     }
 
+    back(){
+        browserHistory.push('/adminPage');
+    }
+
     componentWillReceiveProps(nextProps) {
         if (nextProps.addEmployeeTip) {
             alert("添加成功！");
@@ -35,6 +39,7 @@ export default class AddEmployee extends React.Component {
     render() {
 
         return <div className="pageBody" >
+            <button >返回</button>
             <div class="form-group" className="col">
                <label className="split"> 姓名 </label><input type="text" className="addInput"  ref="emp_name"/>
                 <label className="split"> 性 别 </label><input type="text" className="addInput" ref="emp_sex"/>

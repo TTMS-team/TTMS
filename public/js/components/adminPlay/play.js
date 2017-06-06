@@ -45,7 +45,7 @@ export default class Play extends React.Component {
                     <span className="playSpan1">{value.play_ticket_price}</span>
                     <span className="playSpan1">{value.play_status}</span>
                     <input className="playButton" type="button" value="修改"  onClick={this.modifyPlay.bind(this,value.play_id)}/>
-                    <input className="playButton1" type="button" value="删除" onClick={this.deletePlay.bind(this,value.play_id)}/>
+                    <button className="playButton1 glyphicon glyphicon-trash" onClick={this.deletePlay.bind(this,value.play_id)}/>
                 </div>
             </div>
         });
@@ -53,8 +53,8 @@ export default class Play extends React.Component {
         return <div className="mainView">
             <div>
                 <input className="search" type="text" ref="searchInput" placeholder="请输入剧目ID"/>
-                <button className="searchButton" onClick={this.searchPlay.bind(this)}>查询</button>
-                <button className="searchButton" onClick={this.addPlay.bind(this)}>添加</button>
+                <button className="searchButton glyphicon glyphicon-search" onClick={this.searchPlay.bind(this)}> 查询</button>
+                <button className="searchButton glyphicon glyphicon-plus" onClick={this.addPlay.bind(this)}> 添加</button>
             </div>
             <div>
                 <div>

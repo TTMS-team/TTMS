@@ -1,30 +1,31 @@
-/*
-剧目
-*/
-.playSpan
+.ticketSpan
 {
+
     font-family: "Microsoft YaHei";
     font-size: 20px;
-    margin-left: 20px;
-    width: 12.5%;
-    margin-top: 50px;
+    margin-left: 30px;
+    width: 12%;
+    margin-top: 10px;
     height: 40px;
     text-align: center;
-
-}
-
-.playSpan1
-{
-    font-size: 18px;
-    margin-left: 10px;
-    width: 10%;
-    text-align: center;
+    margin-bottom: 20px;
     display:-moz-inline-box;
     display:inline-block;
-    margin-top: 5px;
+}
+.ticketSpan1
+{
+
+    font-family: "Microsoft YaHei";
+    font-size: 15px;
+    margin-left: 30px;
+    width: 12%;
+    text-align: center;
+    margin-bottom: 20px;
+    display:-moz-inline-box;
+    display:inline-block;
 }
 
-.playButton
+.ticketButton
 {
     border:2px solid #a1a1a1;
     width: 79px;
@@ -37,12 +38,11 @@
     background: #cccccc;
     color: #000080;
     font-size: 14px;
-    margin-left: 25px;
+    margin-left: 35px;
     display:-moz-inline-box;
     display:inline-block;
 }
-
-.playButton1
+.ticketButton1
 {
     border:2px solid #a1a1a1;
     width: 79px;
@@ -58,24 +58,4 @@
     margin-left: 3px;
     display:-moz-inline-box;
     display:inline-block;
-}
-.playInput
-{
-    border:1px solid #a1a1a1;
-    width:225px;
-    height : 40px;
-    border-radius:5px;
-    margin-top: 50px;
-    font-size:12px;
-    margin-right: 25px;
-}
-.playInput1
-{
-    border:1px solid #a1a1a1;
-    width:550px;
-    height : 160px;
-    border-radius:5px;
-    margin-top: 50px;
-    font-size:12px;
-    margin-right: 25px;
 }

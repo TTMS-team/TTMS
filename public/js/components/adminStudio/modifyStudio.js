@@ -71,19 +71,12 @@ export default class ModifyStudio extends React.Component {
     }
 
     render() {
-        console.log(oldInfo)
         var oldInfo=this.props.oldStudioInfo[0];
-        // {"studio_col_count":8,
-        // "studio_id":6,
-        // "studio_introduction":"1号",
-        // "studio_isavailable":"true",
-        // "studio_name":"3号厅",
-        // "studio_row_count":10}
-        const name=this.state.name ===null ? oldInfo.studio_name:this.state.name;
-        const row=this.state.row ===null ? oldInfo.studio_row_count:this.state.row;
-        const col=this.state.col ===null ? oldInfo.studio_col_count:this.state.col;
-        const int=this.state.int ===null ? oldInfo.studio_introduction:this.state.int;
-        const ava=this.state.ava ===null ? oldInfo.studio_isavailable:this.state.ava;
+        var name=this.state.name ===null ? oldInfo.studio_name:this.state.name;
+    var row=this.state.row ===null ? oldInfo.studio_row_count:this.state.row;
+    var col=this.state.col ===null ? oldInfo.studio_col_count:this.state.col;
+    var int=this.state.int ===null ? oldInfo.studio_introduction:this.state.int;
+    var ava=this.state.ava ===null ? oldInfo.studio_isavailable:this.state.ava;
 
 
         return <div div id="addStudio">

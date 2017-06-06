@@ -49,7 +49,7 @@ export default class Employee extends React.Component {
                 <span className="span2">{value.emp_position}</span>
                 <span className="span4">{value.emp_tel_num}</span>
                 <input className="empButton"  type="button" value="修改"  onClick={this.modifyEmployee.bind(this,value.emp_id)}/>
-                <input className="empButton1"  type="button" value="删除" onClick={this.deleteEmployee.bind(this,value.emp_id)}/>
+                <button className="empButton1 glyphicon glyphicon-trash"    onClick={this.deleteEmployee.bind(this,value.emp_id)}/>
             </div>
         });
         
@@ -57,8 +57,8 @@ export default class Employee extends React.Component {
             <div>
 
                     <input  className="search" type="text" ref="searchInput" placeholder="请输入员工ID"/>
-                    <button   className="searchButton"onClick={this.searchEmployee.bind(this)}>查询</button>
-                    <button  className="searchButton" onClick={this.addEmployee.bind(this)}>添加</button>
+                    <button   className="searchButton glyphicon glyphicon-search "onClick={this.searchEmployee.bind(this)}> 查询</button>
+                    <button   className="searchButton glyphicon glyphicon-plus" onClick={this.addEmployee.bind(this)}> 添加</button>
 
                    
             </div>

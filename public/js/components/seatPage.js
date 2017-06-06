@@ -38,18 +38,18 @@ export default class ConductorPage extends React.Component {
                     }else{
                         if(j===col-1){
                             if(i===0){
-                                p.push(<span>{j}</span>)
+                                p.push(<span className="seatSpanj">{j}</span>)
                             }else{
-                                p.push(<span onClick={this.showOrderList.bind(this,i,j)}>{`${i}排${j}座`}</span>);
+                                p.push(<span className="seatSpan" onClick={this.showOrderList.bind(this,i,j)}>{`${i}排${j}座`}</span>);
                             }
                             p.push(<br/>)
                         }else{
                             if(i===0){
-                                p.push(<span>{j}</span>)
+                                p.push(<span className="seatSpanj">{j}</span>)
                             }else if(j===0){
-                                p.push(<span>{i}</span>)
+                                p.push(<span className="seatSpani">{i}</span>)
                             }else {
-                                p.push(<span onClick={this.showOrderList.bind(this,i,j)}>{`${i}排${j}座`}</span>);
+                                p.push(<span  className="seatSpan" onClick={this.showOrderList.bind(this,i,j)}>{`${i}排${j}座`}</span>);
                             }
                         }
                     }
@@ -58,21 +58,23 @@ export default class ConductorPage extends React.Component {
         }
         console.log(this.state.orderList)
         var order=this.state.orderList.map((value,index)=>{
-           return <div>
+           return <div className="buySeat">
                <span>{`${value.row}行${value.col}座`}</span>
            </div>
         });
 
         return <div>
             <Title username={this.props.username}/>
-            <div>
-                <div>银幕</div>
-                {p}
+            <div className="seatMainView">
+                <div className="screen">银幕</div>
+              <div>  {p}</div>
             </div>
-            <div>
+            <div className="buyView">
+                <div className="setTitle">
                 已选座位
+                </div>
                 {order}
-                <button>确认购买</button>
+               <div className="seatButton"> <button>确认购买</button></div>
             </div>
         </div>
     }

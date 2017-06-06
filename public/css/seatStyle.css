@@ -7,3 +7,95 @@
     color: #bbbbbb;
     margin-top: 10px;
 }
+.seatMainView
+{
+    border:2px solid #a1a1a1;
+    width: 70%;
+    height: 600px;
+    margin-left: 5%;
+    float: left;
+    color: #bbbbbb;
+    margin-top: 10px;
+}
+.seatView
+{
+    border:2px solid #a1a1a1;
+    width: 80%;
+    height: 600px;
+    margin-left: 5%;
+    color: #bbbbbb;
+    margin-top: 10px;
+}
+.buyView
+{
+    border:2px solid #a1a1a1;
+    width: 15%;
+    height: 400px;
+    margin-top: 100px;
+    margin-right: 40px;
+    float: right;
+    overflow-y: scroll;
+}
+.seatSpan
+{
+    width: 50px;
+    height: 30px;
+    margin-left: 30px;
+    text-align: center;
+    display:-moz-inline-box;
+    display:inline-block;
+    color: #009926;
+}
+.seatSpani
+{
+    margin-left: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display:-moz-inline-box;
+    display:inline-block;
+    color: #009926;
+}
+.seatSpanj
+{
+    margin-left: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display:-moz-inline-box;
+    display:inline-block;
+    color: #009926;
+}
+.seatButton
+{
+    border:2px solid #a1a1a1;
+    width: 79px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    background-position: left top;
+    background: #cccccc;
+    color: #000080;
+    font-size: 14px;
+    margin-left: 30%;
+    display:-moz-inline-box;
+    display:inline-block;
+}
+
+.setTitle
+{
+    text-align: center;
+    font-size: x-large;
+    color: midnightblue;
+}
+.buySeat
+{
+    border:2px solid #a1a1a1;
+    width: 80px;
+    text-align: center;
+    font-size: large;
+    margin-left: 30%;
+    margin-top: 5px;
+}

@@ -31,7 +31,7 @@ export default class Login extends React.Component {
     componentWillReceiveProps(nextProps) {
         console.log(nextProps.loginTip[0])
         if (nextProps.loginTip[0]) {
-            if(nextProps.loginTip[0].emp_position==="经理"){
+            if(nextProps.loginTip[0].emp_position==="1"){
                 browserHistory.push(`/adminPage?emp_id=${nextProps.loginTip[0].emp_id}`);
             }else{
                 browserHistory.push(`/conductorPage?emp_id=${nextProps.loginTip[0].emp_id}`);

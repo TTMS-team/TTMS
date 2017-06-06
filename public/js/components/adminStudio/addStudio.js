@@ -2,6 +2,7 @@ require ('../../../css/style.css');
 require('../../../css/studioStyle.css');
 import React from 'react';
 import {browserHistory} from 'react-router';
+import ReturnBtn from '../returnBtn';
 
 export default class AddStudio extends React.Component {
     
@@ -34,9 +35,8 @@ export default class AddStudio extends React.Component {
     
     render(){
         return <div id="addStudio">
+            <ReturnBtn/>
             <div>
-                
-                
                 <div class="form-group"  className="colStyle">
                     <label className="studioLab">演出厅名称</label><input className="studioInput" type="text" ref="name"/>
                 </div>

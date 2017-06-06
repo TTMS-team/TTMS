@@ -1,5 +1,7 @@
 require ('../../../css/style.css');
 require('../../../css/employeeStyle.css');
+import ReturnBtn from '../returnBtn';
+
 import React from 'react';
 import {browserHistory} from 'react-router';
 
@@ -139,6 +141,7 @@ export default class ModifyEmployee extends React.Component {
         const induction=this.state.induction ===null ? oldInfo.emp_induction_time:this.state.induction;
 
         return <div className="pageBody">
+            <ReturnBtn/>
             <div class="form-group" className="col">
                 <label label className="split">姓 名</label><input  className="addInput"  type="text" value={name} ref="emp_name" onChange={this.onchangeName.bind(this)}/>
                 <label label className="split">性 别</label><input  className="addInput" type="text" value={sex} ref="emp_sex" onChange={this.onchangeSex.bind(this)}/>

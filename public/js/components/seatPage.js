@@ -1,6 +1,5 @@
 import React from 'react';
 import Title from './title';
-import {Link} from 'react-router';
 
 export default class ConductorPage extends React.Component {
     constructor(props){

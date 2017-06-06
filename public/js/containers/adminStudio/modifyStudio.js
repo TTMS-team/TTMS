@@ -11,8 +11,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         // this.props.addEmployee(info)
-        getOldStudioInfo:(emp_id)=>{
-            dispatch({type:"SEARCH_STUDIO_BY_ID",emp_id});
+        getOldStudioInfo:(studio_id)=>{
+            dispatch({type:"SEARCH_STUDIO_BY_ID",studio_id});
         },
         updateStudioModify:(info)=>{
             dispatch({type:"UPDATE_STUDIO_MODIFY",info})

@@ -3,14 +3,14 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return {
-        schedule:state.schedulePage.scheduleList
+        scheduleList:state.schedule.scheduleList
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getSchedule:(play_id)=>{
-            dispatch({type:"GET_SCHEDULE",play_id});
+        getScheduleListByPlayID:(play_id)=>{
+            dispatch({type:"GET_SCHEDULE_LIST_BY_PLAY_ID",play_id});
         }
     };
 };

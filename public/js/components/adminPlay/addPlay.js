@@ -18,7 +18,7 @@ export default class AddPlay extends React.Component {
             "play_length":this.refs.length.value,
             "play_ticket_price":this.refs.price.value,
             "play_introduction":this.refs.int.value,
-            "value.play_status":this.refs.status.value
+            "play_status":this.refs.status.value
             };
         //if(!info.play_introduction||!info.play_lang_id||!info.play_length||!info.play_name||!info.play_ticket_price||!info.play_type_id||!info.value.play_status)
         //{

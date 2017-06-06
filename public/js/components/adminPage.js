@@ -5,12 +5,11 @@ require('../../css/playStyle.css');
 import React from 'react';
 import Title from './title';
 
-import Schedule from './schedule';
+import Schedule from './adminSchedule/schedule';
 import Employee from './adminEmployee/employee';
 import Play from './adminPlay/play';
-
 import Studio from './adminStudio/studio';
-import Ticket from './ticket';
+import Ticket from './adminTicket/ticket';
 
 export default class AdminPage extends React.Component {
 
@@ -20,10 +19,13 @@ export default class AdminPage extends React.Component {
 
     render() {
 
-        var p=<Schedule />;
+        var p=<Schedule getScheduleList={this.props.getScheduleList}
+                        scheduleList={this.props.scheduleList}/>;
         switch (this.props.presentShow){
             case "schedule":
-                p=<Schedule/>;
+                p=<Schedule
+                    getScheduleList={this.props.getScheduleList}
+                    scheduleList={this.props.scheduleList}/>;
                 break;
             case "play":
                 p=<Play getPlayList={this.props.getPlayList}
@@ -40,7 +42,9 @@ export default class AdminPage extends React.Component {
                           deleteStudioTip={this.props.deleteStudioTip}/>;
                 break;
             case "ticket":
-                p=<Ticket/>;
+                p=<Ticket getTicketList={this.props.getTicketList}
+                          ticketList={this.props.ticketList}
+                          deleteTicket={this.props.deleteTicket}/>;
                 break;
             case "employee":
                 p=<Employee deleteEmployee={this.props.deleteEmployee}

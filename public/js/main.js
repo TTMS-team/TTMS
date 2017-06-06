@@ -6,7 +6,6 @@ import React from 'react';
 import reducer from './reducers/index';
 
 import middlewareLogin from './middlewares/login';
-// import middlewareAdminPage from './middlewares/adminPage';
 import middlewareConductorPage from './middlewares/conductorPage';
 import middlewareSchedulePage from './middlewares/schedulePage';
 import middlewareSeatPage from './middlewares/seatPage';
@@ -14,6 +13,8 @@ import middlewareSeatPage from './middlewares/seatPage';
 import middlewareEmployee from './middlewares/adminEmployee';
 import middlewareStudio from './middlewares/adminStudio';
 import middlewarePlay from './middlewares/adminPlay';
+import middlewareTicket from './middlewares/adminTicket';
+import middlewareSchedule from './middlewares/adminSchedule';
 
 
 import AdminPage from './containers/adminPage';
@@ -42,7 +43,10 @@ const createMiddlewareStore = applyMiddleware(
     
     middlewarePlay,
     middlewareEmployee,
-    middlewareStudio)(createStore);
+    middlewareStudio,
+    middlewareTicket,
+    middlewareSchedule
+)(createStore);
 
 
 const store = createMiddlewareStore(reducer);
@@ -54,7 +58,7 @@ render(<Provider store={store}>
         <Route path="/conductorPage" component={ConductorPage}/>
         <Route path="/schedulePage" component={SchedulePage}/>
         <Route path="/seatPage" component={SeatPage}/>
-
+    
         <Route path="/addEmployee" component={addEmployee}/>
         <Route path="/modifyEmployee" component={modifyEmployee}/>
         

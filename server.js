@@ -28,7 +28,7 @@ app.get("/getEmployeeList",function (req,res) {
 
         } else {
             console.log(err);
-            
+
         }
     });
 
@@ -233,95 +233,177 @@ app.post("/updateStudioModify",function (req,res) {
 
 //获取剧目列表
 app.get("/getPlayList",function (req,res) {
-   res.json([{"play_id":1,"play_name":2,"play_lang_id":3,"play_type_id":4,"play_length":5,"play_ticket_price":6,"play_status":7}]);
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/schedule/ScheduleQueryAll'
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData = body;
+            res.json(resData);
+        } else {
+            console.log(err);
+        }
+    })
 });
 //根据ID查找剧目
 app.get("/searchPlay/:id",function (req,res) {
    var play_id= req.params.id;//over
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http:// 115.159.82.119:8080/Movie/play/PlayQueryId?id='+play_id
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            res.json(resData);
+        } else {
+            console.log(err);
+        }
+    });
 });
 //根据ID删除剧目
 app.get("/deletePlay/:id",function (req,res) {
     var play_id=req.params.id;//over
     var resData=[];
-    // { id: '1',
-    //     name: '',
-    //     lang: '',
-    //     type: '',
-    //     length: '',
-    //     int: 'ccccc',
-    //     price: '',
-    //     status: '' }
-
-    console.log(play_id)
-    // var options = {
-    //     method: 'GET',
-    //     url: 'http://115.159.82.119:8080/Movie/studio/StudioDelete?id='+studio_id
-    // };
-    // request(options,function (err,response,body) {
-    //     if (response) {
-    //         resData=body;
-    //         res.json(resData);
-    //     } else {
-    //         console.log(err);
-    //     }
-    // });
-    res.json("truey");
+    var options = {
+        method: 'GET',
+        url: 'http:// 115.159.82.119:8080/Movie/play/PlayDelete?id='+play_id
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            res.json(resData);
+        } else {
+            console.log(err);
+        }
+    });
 });
 //增加剧目
 app.post('/addPlay',function (req,res) {
     var info=req.body;   //over
     var resData=[];
-    // console.log(info)
-    // { play_name: '33',
-    //     play_lang_id: '22',
-    //     play_type_id: '33',
-    //     play_length: '22',
-    //     play_ticket_price: '33',
-    //     play_introduction: '33',
-    //     'value.play_status': '22' }
 
-    // var options = {
-    //     method: 'GET',
-    //     url: 'http://115.159.82.119:8080/Movie/employee/EmployeeAdd?name='+info.emp_name+'&password='+info.emp_password+'&position='+info.emp_position
-    // };
-    // request(options,function (err,response,body) {
-    //     if (response) {
-    //         resData=body;
-    //         res.json(resData);
-    //     } else {
-    //         console.log(err);
-    //
-    //     }
-    // });
-    res.json("truerrr");
+    var options = {
+        method: 'GET',
+        url:' http:// 115.159.82.119:8080/Movie/play/PlayAdd?'+
+        'play_type_id='+info.play_type_id+
+        '&play_lang_id='+info.play_lang_id+
+        '&play_name='+ info.play_name+
+        '&play_introduction='+info.play_introduction+
+        '&play_length=' +info.play_length+
+        '&play_ticket_price='+info.play_ticket_price+
+        '&play_status='+info.play_status
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            res.json(resData);
+        } else {
+            console.log(err);
+
+        }
+    });
 });
 // 修改剧目
 app.post("/updatePlayModify",function (req,res) {
 
     var info=req.body;
-    console.log(info)
-    // var resData="";
+
+        var options = {
+            method: 'GET',
+            url:'http:// 115.159.82.119:8080/Movie/play/PlayUpdata?'+
+            'play_type_id='+info.play_type_id+
+            '&play_lang_id='+info.play_lang_id+
+            '&play_name='+ info.play_name+
+            '&play_introduction='+info.play_introduction+
+            '&play_length=' +info.play_length+
+            '&play_ticket_price='+info.play_ticket_price+
+            '&play_status='+info.play_status+
+                '$id='+info.play_id
+        };
+
+    request(options,function (err,response,body) {
+        if (response) {
+
+            res.json(body);
+        } else {
+            console.log(err);
+
+        }
+    });
+    // res.json("true");
+});
+
+
+// 获取全部票列表
+app.get("/getTicketList",function (req,res) {
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/ticket/TicketQueryAll'
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData = body;
+            res.json(resData);
+        } else {
+            console.log(err);
+        }
+    })
+    // res.json([{ticket_id:555,seat_id:1,sched_id:2,ticket_price:3,ticket_status:5,ticket_locked_time:6}])
+});
+//根据ID删除票
+app.get("/deleteTicket/:id",function (req,res) {
+    var ticket_id=req.params.id;//over
+    console.log("snc");
+    // var resData=[];
     // var options = {
     //     method: 'GET',
-    //     url: 'http://115.159.82.119:8080/Movie/employee/EmployeeUpdata?id='
-    //     +info.id+'&name='+info.name+'&password='+info.password
-    //     +'&position='+info.position+'&tel='+info.tel+'&addr='+info.addr
-    //     +'&email='+info.email+'&induction='+info.induction+'&month='+info.monthMoney
-    //     +'&sum='+info.sumMoney+'&holiday='+info.holiday+'&age='+info.age+'&sex='+info.sex
+    //     url: 'http://115.159.82.119:8080/Movie/ticket/TicketQueryId?ticket_id='+ticket_id
     // };
-    //
     // request(options,function (err,response,body) {
     //     if (response) {
     //         resData=body;
-    //         // console.log(resData)
     //         res.json(resData);
     //     } else {
     //         console.log(err);
-    //
     //     }
     // });
-    // res.json("true");
+    res.json("true");
 });
+
+
+// /getScheduleList
+app.get("/getScheduleList",function (req,res) {
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/schedule/ScheduleQueryAll'
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData = body;
+            res.json(resData);
+        } else {
+            console.log(err);
+        }
+    })
+    // res.json([{ticket_id:555,seat_id:1,sched_id:2,ticket_price:3,ticket_status:5,ticket_locked_time:6}])
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 

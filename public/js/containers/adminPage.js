@@ -12,7 +12,12 @@ const mapStateToProps = (state) => {
         deleteStudioTip:state.studio.deleteTip,
         //剧目
         playList:state.play.playList,
-        deletePlayTip:state.play.deleteTip
+        deletePlayTip:state.play.deleteTip,
+        //票
+        ticketList:state.ticket.ticketList,
+        deleteTicketTip:state.ticket.deleteTip,
+        //演出计划
+        scheduleList:state.schedule.scheduleList
 
     }
 };
@@ -51,6 +56,17 @@ const mapDispatchToProps = (dispatch) => {
         },
         deletePlay:(play_id)=>{
             dispatch({type:"DELETE_PLAY",play_id});
+        },
+        //票
+        getTicketList:()=>{
+            dispatch({type:"GET_TICKET_LIST"})
+        },
+        deleteTicket:(ticket_id)=>{
+            dispatch({type:"DELETE_TICKET",ticket_id});
+        },
+        //演出计划
+        getScheduleList:()=>{
+            dispatch({type:"GET_SCHEDULE_LIST"})
         }
     };
 };

@@ -7,6 +7,8 @@ import seatPage from './seatPage';
 import employee from './adminEmployee';
 import studio from './adminStudio';
 import play from './adminPlay';
+import ticket from './adminTicket';
+import schedule from './adminSchedule';
 
 export default combineReducers({
     login,
@@ -16,5 +18,7 @@ export default combineReducers({
     seatPage,
     employee,
     studio,
-    play
+    play,
+    ticket,
+    schedule
 });

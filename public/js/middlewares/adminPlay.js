@@ -6,8 +6,7 @@ export default store => next => action => {
             .end((err, res) => {
                 // console.log(res.body)
                 next({type:"SHOW_PLAY_LIST",
-                    // data:JSON.parse(res.body)
-                    data:res.body
+                    data:JSON.parse(res.body)
                 });
             });
     }else if(action.type==="SEARCH_PLAY_BY_ID"){

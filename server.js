@@ -11,7 +11,26 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get("/",function (req,res) {
     res.sendfile('index.html');
 });
-app.get("/login",login);
+app.post("/login",function (req,res) {
+    var info=req.body;
+    // { username: '333', password: '222' }
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/employee/EmployeeQueryId?id='+info.username
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+          //  [{"emp_addr":"陕西省彬县","emp_age":"432","emp_email":"2870466010@","emp_holiday":"34","emp_id":4143100,"emp_image":"","emp_induction_time":"2016/3/6","emp_month_money":"30K","emp_name":"李文朋","emp_password":"123456","emp_position":"经理","emp_sex":"男","emp_sum_money":"110K","emp_tel_num":"18240800871"}]
+
+            console.log(body)
+            res.json(body);
+        } else {
+            console.log(err);
+
+        }
+    });
+
+});
 
 
 //获取全体员工数组 over
@@ -262,7 +281,7 @@ app.get("/searchPlay/:id",function (req,res) {
     var resData=[];
     var options = {
         method: 'GET',
-        url: 'http:// 115.159.82.119:8080/Movie/play/PlayQueryId?id='+play_id
+        url: 'http://115.159.82.119:8080/Movie/play/PlayQueryId?id='+play_id
     };
     request(options,function (err,response,body) {
         if (response) {
@@ -279,7 +298,7 @@ app.get("/deletePlay/:id",function (req,res) {
     var resData=[];
     var options = {
         method: 'GET',
-        url: 'http:// 115.159.82.119:8080/Movie/play/PlayDelete?id='+play_id
+        url: 'http://115.159.82.119:8080/Movie/play/PlayDelete?id='+play_id
     };
     request(options,function (err,response,body) {
         if (response) {
@@ -297,7 +316,7 @@ app.post('/addPlay',function (req,res) {
 
     var options = {
         method: 'GET',
-        url:' http:// 115.159.82.119:8080/Movie/play/PlayAdd?'+
+        url:' http://115.159.82.119:8080/Movie/play/PlayAdd?'+
         'play_type_id='+info.play_type_id+
         '&play_lang_id='+info.play_lang_id+
         '&play_name='+ info.play_name+
@@ -320,23 +339,32 @@ app.post('/addPlay',function (req,res) {
 app.post("/updatePlayModify",function (req,res) {
 
     var info=req.body;
+    // console.log(info)
+    // { id: '3',
+    //     name: '爱丽丝梦游仙境2',
+    //     lang: '汉语',
+    //     type: '喜剧',
+    //     length: '120',
+    //     int: '爱丽丝在陷阱中碰见了他，然后....',
+    //     price: '32',
+    //     status: '已安排' }
 
-        var options = {
+    var options = {
             method: 'GET',
-            url:'http:// 115.159.82.119:8080/Movie/play/PlayUpdata?'+
-            'play_type_id='+info.play_type_id+
-            '&play_lang_id='+info.play_lang_id+
-            '&play_name='+ info.play_name+
-            '&play_introduction='+info.play_introduction+
-            '&play_length=' +info.play_length+
-            '&play_ticket_price='+info.play_ticket_price+
-            '&play_status='+info.play_status+
-                '$id='+info.play_id
+            url:'http://115.159.82.119:8080/Movie/play/PlayUpdata?'+
+            'play_type_id='+info.type+
+            '&play_lang_id='+info.lang+
+            '&play_name='+ info.name+
+            '&play_introduction='+info.int+
+            '&play_length=' +info.length+
+            '&play_ticket_price='+info.price+
+            '&play_status='+info.status+
+                '&id='+info.id
         };
-
+    console.log(options.url)
     request(options,function (err,response,body) {
         if (response) {
-
+            console.log(body)
             res.json(body);
         } else {
             console.log(err);

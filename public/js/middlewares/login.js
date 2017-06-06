@@ -2,9 +2,10 @@ import request from 'superagent';
 
 export default store => next => action => {
     if (action.type === 'LOGIN_SUBMIT') {
-        request.get('/login')
+        request.post('/login')
+            .send(action.info)
             .end((err, res) => {
-                next({type:"GET_LOGIN_TIP", data: res.body});
+                next({type:"GET_LOGIN_TIP", data:JSON.parse(res.body)});
             });
     }
     else

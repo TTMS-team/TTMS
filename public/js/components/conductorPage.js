@@ -27,13 +27,14 @@ export default class ConductorPage extends React.Component {
                         <span className="conductorSpan1">{value.play_lang_id}</span>
                         <span className="conductorSpan1">{value.play_ticket_price}</span>
                         <button className=" conductorButton glyphicon glyphicon-th-list"  onClick={this.getSchedule.bind(this,value.play_id)}> 演出计划</button>
+
                     </div>
             </div>
         });
 
 
         return <div>
-            <Title username={this.props.username}/>
+            <Title username={this.props.location.query.emp_id}/>
             <div>
                 <input  className="search" type="text" placeholder="请输入影片名"/>
                 <button className="searchButton glyphicon glyphicon-search"> 查找</button>

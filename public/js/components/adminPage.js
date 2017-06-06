@@ -59,7 +59,7 @@ export default class AdminPage extends React.Component {
         }
 
         return <div className="pageBody">
-            <Title username={this.props.username}/>
+            <Title username={this.props.location.query.emp_id}/>
             <div id="menu">
             <ul id="aside" onClick={this.onAside.bind(this)} >
                <li className="schedule" >演出计划</li>

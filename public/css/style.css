@@ -7,11 +7,12 @@
 #title
 {
     height: 60px;
+
     border-bottom: 1px solid #d6dfea;
     font-size:50px;
     font-family: "Microsoft YaHei";
-    line-height: 10px;
     text-align: center;
+    line-height: 5px;
 }
 
 .table
@@ -63,12 +64,12 @@
     color: #00b3ee;
     font-size: large;
     float: right;
+    margin-right: 10px;
 }
-.returnButton
-{
+.returnButton {
     width: 35px;
     height: 35px;
-    border: 2px solid#00b3ee;
+    border: 2px solid #00b3ee;
     border-radius: 50%;
     color: #000080;
 }

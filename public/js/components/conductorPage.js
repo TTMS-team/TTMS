@@ -1,5 +1,6 @@
 require('../../css/conductorPageStyle.css');
 require('../../css/seatStyle.css');
+
 import React from 'react';
 import Title from './title';
 import {browserHistory} from 'react-router';

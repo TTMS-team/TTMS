@@ -9,7 +9,7 @@ export default class ReturnBtn extends React.Component {
 
     render() {
         return <div>
-            <button  className="returnButton glyphicon glyphicon-arrow-left" onClick={this.backPage.bind(this)}></button>
+            <button className="returnButton glyphicon glyphicon-arrow-left" onClick={this.backPage.bind(this)}></button>
         </div>
     }
 }

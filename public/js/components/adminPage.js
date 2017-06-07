@@ -38,6 +38,7 @@ export default class AdminPage extends React.Component {
                 break;
         }
     }
+
     render() {
 
         var p=<Schedule getScheduleList={this.props.getScheduleList}
@@ -85,11 +86,13 @@ export default class AdminPage extends React.Component {
 
         }
 
+
+
         return <div className="pageBody">
             <Title username={this.props.location.query.emp_id}/>
             <button className="returnButton glyphicon glyphicon-arrow-left" value="回上页" onClick={this.turnBack.bind(this)}/>
             <div id="menu">
-            <ul id="aside" onClick={this.onAside.bind(this)} >
+            <ul id="aside"  onClick={this.onAside.bind(this)} >
                <li className="schedule" >演出计划</li>
                <li className="play">剧目管理</li>
                <li className="studio">演出厅管理</li>

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReturnBtn from '../returnBtn';
 
 
 export default class Ticket extends React.Component {
@@ -7,7 +6,7 @@ export default class Ticket extends React.Component {
         this.props.getTicketList();
     }
     componentWillReceiveProps(nextProps) {
-        if (nextProps. deleteTicketTip) {
+        if (nextProps.deleteTicketTip) {
             this.props.getTicketList();
             alert("删除成功！")
         }
@@ -15,26 +14,29 @@ export default class Ticket extends React.Component {
     modifyTicket(){
 
     }
-    deleteTicket(){
-
-    }
-    searchTicket(ticket_id){
+    deleteTicket(ticket_id){
         this.props.deleteTicket(ticket_id);
     }
-    addTicket(){
-        
+    searchTicket(){
+        var ticket_id=this.refs.searchInput.value;
+        if(!ticket_id){
+            alert("输入不得为空！");
+            return;
+        }
+        console.log(ticket_id)
+        this.props.searchTicket(ticket_id);
     }
+
     render() {
         var p=this.props.ticketList.map((value,index)=>{
            return<div>
                <div>
-                   <span className="ticketSpan1">{value.seat_id}</span>
+                   <span className="ticketSpan1">{value.ticket_id}</span>
                    <span className="ticketSpan1">{value.sched_id}</span>
                    <span className="ticketSpan1">{value.ticket_price}</span>
                    <span className="ticketSpan1">{value.ticket_status}</span>
                    <span className="ticketSpan1">{value.ticket_locked_time}</span>
-                   <input  className="ticketButton" type="button" value="修改"  onClick={this.modifyTicket.bind(this,value.ticket_id)}/>
-                   < button className="ticketButton1 glyphicon glyphicon-trash" onClick={this.deleteTicket.bind(this,value.ticket_id)}/>
+                   <button onClick={this.deleteTicket.bind(this,value.ticket_id)} className="ticketButton glyphicon glyphicon-trash" onClick={this.deleteTicket.bind(this,value.ticket_id)}/>
                </div>
            </div>
         });
@@ -42,13 +44,12 @@ export default class Ticket extends React.Component {
         return <div className="mainView">
             <div>
 
-                <input className="search" type="text" ref="searchInput" placeholder="请输入员工ID"/>
+                <input className="search" type="text" ref="searchInput" placeholder="请输入票ID"/>
                 <button className="searchButton glyphicon glyphicon-search" onClick={this.searchTicket.bind(this)}> 查询</button>
-                <button   className="searchButton glyphicon glyphicon-plus"onClick={this.addTicket.bind(this)}> 添加</button>
 
             </div>
             <div>
-                <span className="ticketSpan">座位ID</span>
+                <span className="ticketSpan">票ID</span>
                 <span className="ticketSpan">演出计划ID</span>
                 <span className="ticketSpan">票价</span>
                 <span className="ticketSpan">票状态</span>

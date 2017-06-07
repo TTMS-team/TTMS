@@ -41,12 +41,18 @@ export default class AdminPage extends React.Component {
     render() {
 
         var p=<Schedule getScheduleList={this.props.getScheduleList}
-                        scheduleList={this.props.scheduleList}/>;
+                        scheduleList={this.props.scheduleList} 
+                        searchScheduleById={this.props.searchScheduleById}
+                        deleteSchedule={this.props.deleteSchedule}
+                        deleteScheduleTip={this.props.deleteScheduleTip}/>;
         switch (this.props.presentShow){
             case "schedule":
                 p=<Schedule
                     getScheduleList={this.props.getScheduleList}
-                    scheduleList={this.props.scheduleList}/>;
+                    scheduleList={this.props.scheduleList} 
+                    searchScheduleById={this.props.searchScheduleById} 
+                    deleteSchedule={this.props.deleteSchedule} 
+                    deleteScheduleTip={this.props.deleteScheduleTip}/>;
                 break;
             case "play":
                 p=<Play getPlayList={this.props.getPlayList}
@@ -65,7 +71,9 @@ export default class AdminPage extends React.Component {
             case "ticket":
                 p=<Ticket getTicketList={this.props.getTicketList}
                           ticketList={this.props.ticketList}
-                          deleteTicket={this.props.deleteTicket}/>;
+                          deleteTicket={this.props.deleteTicket}
+                          deleteTicketTip={this.props.deleteTicketTip}
+                          searchTicket={this.props.searchTicket}/>;
                 break;
             case "employee":
                 p=<Employee deleteEmployee={this.props.deleteEmployee}

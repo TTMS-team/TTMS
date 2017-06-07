@@ -17,8 +17,8 @@ const mapStateToProps = (state) => {
         ticketList:state.ticket.ticketList,
         deleteTicketTip:state.ticket.deleteTip,
         //演出计划
-        scheduleList:state.schedule.scheduleList
-
+        scheduleList:state.schedule.scheduleList,
+        deleteScheduleTip:state.schedule.deleteScheduleTip
     }
 };
 
@@ -64,9 +64,19 @@ const mapDispatchToProps = (dispatch) => {
         deleteTicket:(ticket_id)=>{
             dispatch({type:"DELETE_TICKET",ticket_id});
         },
+        searchTicket:(ticket_id)=>{
+            dispatch({type:"SEARCH_TICKET_BY_ID",ticket_id})
+        },
         //演出计划
         getScheduleList:()=>{
             dispatch({type:"GET_SCHEDULE_LIST"})
+        },
+        searchScheduleById:(sched_id)=>{
+            dispatch({type:"SEARCH_SCHEDULE_BY_ID",sched_id})
+
+        },
+        deleteSchedule:(sched_id)=>{
+            dispatch({type:"DELETE_SCHEDULE",sched_id})
         }
     };
 };

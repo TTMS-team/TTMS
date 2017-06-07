@@ -8,22 +8,28 @@ export default class Schedule extends React.Component {
         this.props.getScheduleList();
     }
     componentWillReceiveProps(nextProps) {
-        // if (nextProps. deleteTicketTip) {
-        //     this.props.getTicketList();
-        //     alert("删除成功！")
-        // }
+        if (nextProps.deleteScheduleTip) {
+            this.props.getScheduleList();
+            alert("删除成功！")
+        }
     }
     modifySchedule(){
 
     }
-    deleteSchedule(){
-
+    deleteSchedule(sched_id){
+        this.props.deleteSchedule(sched_id);
     }
-    searchSchedule(ticket_id){
-        this.props.deleteTicket(ticket_id);
+    searchSchedule(){
+            var schedule_id=this.refs.searchInput.value;
+            if(!schedule_id){
+                alert("输入不得为空！");
+                return;
+            }
+            this.props.searchScheduleById(schedule_id);
+        
     }
     addSchedule(){
-
+        browserHistory.push('/addSchedule');
     }
     render() {
         
@@ -44,7 +50,7 @@ export default class Schedule extends React.Component {
         return <div className="mainView">
             <div>
 
-                <input  className="search" type="text" ref="searchInput" placeholder="请输入员工ID"/>
+                <input  className="search" type="text" ref="searchInput" placeholder="请输入演出计划ID"/>
                 <button  className="searchButton glyphicon glyphicon-search" onClick={this.searchSchedule.bind(this)}>  查询</button>
                 <button   className="searchButton glyphicon glyphicon-plus"onClick={this.addSchedule.bind(this)}> 添加</button>
 

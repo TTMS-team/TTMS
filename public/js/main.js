@@ -30,7 +30,9 @@ import addStudio from './containers/adminStudio/addStudio';
 import modifyStudio from './containers/adminStudio/modifyStudio';
 
 import addPlay from './containers/adminPlay/addPlay';
-import modifyPlay from './containers/adminPlay/modifyPlay'
+import modifyPlay from './containers/adminPlay/modifyPlay';
+
+import addSchedule from './containers/adminSchedule/addSchedule';
 
 
 
@@ -67,6 +69,8 @@ render(<Provider store={store}>
 
         <Route path="/addPlay" component={addPlay}/>
         <Route path="/modifyPlay" component={modifyPlay}/>
+
+        <Route path="/addSchedule" component={addSchedule}/>
 
 
     </Router>

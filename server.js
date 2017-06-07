@@ -404,23 +404,37 @@ app.get("/getTicketList",function (req,res) {
 //根据ID删除票
 app.get("/deleteTicket/:id",function (req,res) {
     var ticket_id=req.params.id;//over
-    // console.log("snc");
-    // var resData=[];
-    // var options = {
-    //     method: 'GET',
-    //     url: 'http://115.159.82.119:8080/Movie/ticket/TicketQueryId?ticket_id='+ticket_id
-    // };
-    // request(options,function (err,response,body) {
-    //     if (response) {
-    //         resData=body;
-    //         res.json(resData);
-    //     } else {
-    //         console.log(err);
-    //     }
-    // });
-    res.json("true");
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/ticket/TicketDelete?id='+ticket_id
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            console.log(body)
+            res.json(body);
+        } else {
+            console.log(err);
+        }
+    });
 });
-
+app.get("/searchTicket/:id",function (req,res) {
+    var ticket_id= req.params.id;
+    console.log(ticket_id)
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/ticket/TicketQueryId?ticket_id='+ticket_id
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            console.log(body);
+            res.json(resData);
+        } else {
+            console.log(err);
+        }
+    });
+});
 
 // /getScheduleList
 app.get("/getScheduleList",function (req,res) {
@@ -432,6 +446,7 @@ app.get("/getScheduleList",function (req,res) {
     request(options,function (err,response,body) {
         if (response) {
             resData = body;
+            // console.log(body);
             res.json(resData);
         } else {
             console.log(err);
@@ -439,8 +454,70 @@ app.get("/getScheduleList",function (req,res) {
     })
     // res.json([{ticket_id:555,seat_id:1,sched_id:2,ticket_price:3,ticket_status:5,ticket_locked_time:6}])
 });
+app.get("/searchSchedule/:id",function (req,res) {
+    var sched_id= req.params.id;
+    var resData=[];
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/schedule/ScheduleQueryId?id='+sched_id
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            // console.log(body)
+            res.json(resData);
+        } else {
+            console.log(err);
+        }
+    });
+});
+app.get("/deleteSchedule/:id",function (req,res) {
+    var sched_id=req.params.id;//over
+    // console.log(sched_id)
+    var options = {
+        method: 'GET',
+        url: 'http://115.159.82.119:8080/Movie/schedule/ScheduleDelete?id='+sched_id
+    };
+    request(options,function (err,response,body) {
+        if (response) {
+            console.log(body)
+            res.json(body);
+        } else {
+            console.log(err);
+        }
+    });
+});
+app.post('/addSchedule',function (req,res) {
+    var info=req.body;   //over
+    var resData=[];
+    console.log(info);
+   // http:// 115.159.82.119:8080/Movie/schedule/ScheduleAdd
+    // ?studio_id=1&play_id=1&sched_time=1&sched_ticket_price=1
+    // { play_id: 'ee',
+    //     sched_ticket_price: 'qq',
+    //     sched_time: 'ee',
+    //     studio_id: 'qq' }
 
+    var options = {
+        method: 'GET',
+        url:' http://115.159.82.119:8080/Movie/schedule/ScheduleAdd?'+
+        'studio_id='+info. studio_id+
+        '&play_id='+info.play_id+
+        '&sched_time='+ info.sched_time+
+        '&sched_ticket_price='+info.sched_ticket_price
+    };
 
+    request(options,function (err,response,body) {
+        if (response) {
+            resData=body;
+            console.log(body)
+            res.json(resData);
+        } else {
+            console.log(err);
+
+        }
+    });
+});
 
 
 

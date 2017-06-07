@@ -79,7 +79,7 @@ export default class AdminPage extends React.Component {
 
         return <div className="pageBody">
             <Title username={this.props.location.query.emp_id}/>
-            <input type="button" value="回上页" onClick={this.turnBack.bind(this)}/>
+            <button className="returnButton glyphicon glyphicon-arrow-left" value="回上页" onClick={this.turnBack.bind(this)}/>
             <div id="menu">
             <ul id="aside" onClick={this.onAside.bind(this)} >
                <li className="schedule" >演出计划</li>

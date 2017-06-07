@@ -6,11 +6,11 @@
 
 #title
 {
-    height: 62px;
-    overflow: hidden;
+    height: 60px;
     border-bottom: 1px solid #d6dfea;
     font-size:50px;
     font-family: "Microsoft YaHei";
+    line-height: 10px;
     text-align: center;
 }
 
@@ -58,6 +58,19 @@
     font-size: 14px;
     margin-left: 3px;
 }
-
+.user
+{
+    color: #00b3ee;
+    font-size: large;
+    float: right;
+}
+.returnButton
+{
+    width: 35px;
+    height: 35px;
+    border: 2px solid#00b3ee;
+    border-radius: 50%;
+    color: #000080;
+}
 
 

@@ -37,6 +37,10 @@
     text-align: center;
     background: #bbbbbb;
 }
+#menu ul li:visited
+{
+    color: #00b3ee;
+}
 .mainView
 {
     border:1px ;

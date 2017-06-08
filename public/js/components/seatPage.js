@@ -5,9 +5,10 @@ require('../../css/seatStyle.css');
 
 export default class ConductorPage extends React.Component {
     constructor(props){
-       super(props)
+       super(props);
         this.state={
-            orderList:[]
+            orderList:[],
+            seatStyle:"seatSpan glyphicon glyphicon-bed"
         }
     }
 
@@ -15,13 +16,24 @@ export default class ConductorPage extends React.Component {
         this.props.getStudioInfo(this.props.location.query.studio_id);
     }
 
-    showOrderList(row,col){
+    showOrderList(row,col,e){
+        e.target.className=e.target.className==="seatSpan2 glyphicon glyphicon-bed"?"seatSpan1 glyphicon glyphicon-bed":"seatSpan2 glyphicon glyphicon-bed";
         var arr=this.state.orderList;
-        arr.push({"row":row,"col":col});
+        var tag=999;
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].row===row&&arr[i].col===col){
+                tag=i;
+            }
+        }
+        if(tag!==999){
+            arr.splice(tag,1);
+        }else{
+            arr.push({"row":row,"col":col});
+
+        }
         this.setState({
             orderList:arr
         })
-
     }
 
     render() {
@@ -33,15 +45,15 @@ export default class ConductorPage extends React.Component {
             var col=studioInfo.studio_col_count+1;
 
             for(var i=0;i<row;i++){
-                for(var j=0;j<col;j++){
+                    for(var j=0;j<col;j++){
                     if(i===j&&i===0){
-                        p.push(<span className="seatSpan "></span>)
+                        p.push(<span className="seatSpan1 "></span>);
                     }else{
                         if(j===col-1){
                             if(i===0){
                                 p.push(<span className="seatSpan1 ">{j}</span>)
                             }else{
-                                p.push(<span className="seatSpan glyphicon glyphicon-bed" onClick={this.showOrderList.bind(this,i,j)}></span>);
+                                p.push(<span className={this.state.seatStyle} onClick={this.showOrderList.bind(this,i,j)}></span>);
                             }
                             p.push(<br/>)
                         }else{
@@ -50,7 +62,7 @@ export default class ConductorPage extends React.Component {
                             }else if(j===0){
                                 p.push(<span className="seatSpan1">{i}</span>)
                             }else {
-                                p.push(<span  className="seatSpan glyphicon glyphicon-bed" onClick={this.showOrderList.bind(this,i,j)}></span>);
+                                p.push(<span  className={this.state.seatStyle} onClick={this.showOrderList.bind(this,i,j)}></span>);
                             }
                         }
                     }

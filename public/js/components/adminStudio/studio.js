@@ -48,8 +48,8 @@ export default class Studio extends React.Component {
 
                     <span className="studioSpan">{value.studio_id}</span>
                     <span className="studioSpan">{value.studio_name}</span>
-                    <span className="studioSpan">{value.studio_row}</span>
-                    <span className="studioSpan">{value.studio_col}</span>
+                    <span className="studioSpan">{value.studio_row_count}</span>
+                    <span className="studioSpan">{value.studio_col_count}</span>
                     <span className="studioSpan1" >{value.studio_isavailable}</span>
                     <input  className="studioButton" type="button" value="修改" onClick={this.modifyStudio.bind(this,value.studio_id)}/>
                     <button   className="studioButton1 glyphicon glyphicon-trash"   onClick={this.deleteStudio.bind(this,value.studio_id)}/>

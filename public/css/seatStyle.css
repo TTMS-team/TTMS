@@ -133,6 +133,16 @@
     line-height: 30px;
     color:black;
 }
+.seatSpan2{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+
+    text-align: center;
+    line-height: 30px;
+    color:green;
+}
 .index{
     color: black;
 }

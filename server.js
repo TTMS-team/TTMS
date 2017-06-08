@@ -219,27 +219,17 @@ app.get("/deleteStudio/:id",function (req,res) {
 
 //修改演出厅  由于查找有问题 所以无法使用ID进行旧信息的获取
 app.post("/updateStudioModify",function (req,res) {
-   // http:// 115.159.82.119:8080/Movie/studio/StudioUpdata?
-        // studio_name=1&studio_row_count=1&studio_col_count=1
-        // &studio_introduction=1&studio_isavailable=1&studio_id=1
+  
     var info=req.body;
     console.log(info);
-    // { id: '9',
-    //     name: '4号厅rr',
-    //     row: '10',
-    //     col: '10',
-    //     ava: 'true',
-    //     int: '4号演出厅是世界上最好看的演出厅' }
-
-
+   
     var options = {
         method: 'GET',
         url: 'http://115.159.82.119:8080/Movie/studio/StudioUpdata?studio_name='
         +encodeURI(info.name)+'&studio_row_count='+info.row+'&studio_col_count='+info.col
         +'&studio_introduction='+encodeURI(info.int)+'&studio_isavailable='+encodeURI(info.ava)+'&studio_id='+info.id
     };
-    // console.log(options.url)
-
+ 
     request(options,function (err,response,body) {
         if (response) {
             console.log(body)
@@ -295,6 +285,7 @@ app.get("/searchPlay/:id",function (req,res) {
 //根据ID删除剧目
 app.get("/deletePlay/:id",function (req,res) {
     var play_id=req.params.id;//over
+    console.log(play_id)
     var resData=[];
     var options = {
         method: 'GET',
@@ -337,17 +328,7 @@ app.post('/addPlay',function (req,res) {
 });
 // 修改剧目
 app.post("/updatePlayModify",function (req,res) {
-
     var info=req.body;
-    // console.log(info)
-    // { id: '3',
-    //     name: '爱丽丝梦游仙境2',
-    //     lang: '汉语',
-    //     type: '喜剧',
-    //     length: '120',
-    //     int: '爱丽丝在陷阱中碰见了他，然后....',
-    //     price: '32',
-    //     status: '已安排' }
 
     var options = {
             method: 'GET',
@@ -361,17 +342,14 @@ app.post("/updatePlayModify",function (req,res) {
             '&play_status='+info.status+
                 '&id='+info.id
         };
-    console.log(options.url)
     request(options,function (err,response,body) {
         if (response) {
-            console.log(body)
             res.json(body);
         } else {
             console.log(err);
 
         }
     });
-    // res.json("true");
 });
 
 

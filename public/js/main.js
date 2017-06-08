@@ -53,6 +53,7 @@ const createMiddlewareStore = applyMiddleware(
 
 const store = createMiddlewareStore(reducer);
 
+
 render(<Provider store={store}>
     <Router history={browserHistory}>
         <Route path="/" component={Login}/>
@@ -71,7 +72,5 @@ render(<Provider store={store}>
         <Route path="/modifyPlay" component={modifyPlay}/>
 
         <Route path="/addSchedule" component={addSchedule}/>
-
-
     </Router>
 </Provider>, document.getElementById("content"));

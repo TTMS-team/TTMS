@@ -16,7 +16,16 @@ import Ticket from './adminTicket/ticket';
 export default class AdminPage extends React.Component {
 
     onAside(e){
-        this.props.getPresentShow(e.target.className);
+
+        if(e.target.className!="menu2"){
+            var child=e.target.parentNode.children;
+            for(var i=0;i<child.length;i++){
+                child[i].style.backgroundColor="#b9def0";
+            }
+            e.target.style.backgroundColor=e.target.style.backgroundColor==="#00b3ee"?"#b9def0":"#00b3ee ";
+            this.props.getPresentShow(e.target.className);
+        }
+
     }
     turnBack(){
         var presentShow=this.props.presentShow;
@@ -92,8 +101,8 @@ export default class AdminPage extends React.Component {
             <Title username={this.props.location.query.emp_id}/>
             <button className="returnButton glyphicon glyphicon-arrow-left" value="回上页" onClick={this.turnBack.bind(this)}/>
             <div id="menu">
-            <ul id="aside"  onClick={this.onAside.bind(this)} >
-               <li className="schedule" >演出计划</li>
+            <ul id="aside" className="menu2" onClick={this.onAside.bind(this)} >
+               <li className="schedule" style={{background:"#00b3ee"}} >演出计划</li>
                <li className="play">剧目管理</li>
                <li className="studio">演出厅管理</li>
                <li className="ticket">票务管理</li>

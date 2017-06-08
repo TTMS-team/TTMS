@@ -36,10 +36,12 @@
     font-size: 24px;
     text-align: center;
     background: #bbbbbb;
+    line-height: 55px;
 }
 #menu ul li:visited
 {
     color: #00b3ee;
+    background: #bbbbbb;
 }
 .mainView
 {

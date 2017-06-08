@@ -55,7 +55,6 @@ export default class Login extends React.Component {
         var name=this.state.name;
         var password=this.state.password;
         return <div>
-
             <div id="login">
                 <div>
                     <span className="loginTitle">账号登录</span>

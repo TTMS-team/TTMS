@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from './title';
 require('../../css/seatStyle.css');
+import {browserHistory} from 'react-router';
 
 
 export default class ConductorPage extends React.Component {
@@ -35,7 +36,10 @@ export default class ConductorPage extends React.Component {
             orderList:arr
         })
     }
-
+    buyTicket(){
+        alert("购买成功！");
+        browserHistory.push('/conductorPage');
+    }
     render() {
         var p=[];
         var studioInfo=this.props.studioInfo[0];
@@ -87,7 +91,7 @@ export default class ConductorPage extends React.Component {
                 已选座位
                 </div>
                 {order}
-               <div className="seatButton"> <button>确认购买</button></div>
+               <div className="seatButton"> <button onClick={this.buyTicket.bind(this)}>确认购买</button></div>
             </div>
         </div>
     }

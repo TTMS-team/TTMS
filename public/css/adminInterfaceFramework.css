@@ -35,11 +35,21 @@
     font-family: "Microsoft YaHei";
     font-size: 24px;
     text-align: center;
+<<<<<<< HEAD
     background: #b9def0;
 
     line-height: 60px;
     border-radius: 5px;
     cursor: hand;
+=======
+    background: #bbbbbb;
+    line-height: 55px;
+}
+#menu ul li:visited
+{
+    color: #00b3ee;
+    background: #bbbbbb;
+>>>>>>> 5be5e5f3d026bdb875206beea0a567b9720a172e
 }
 
 .mainView

@@ -26,7 +26,7 @@ export default class SchedulePage extends React.Component {
             </div>
         });
 
-        return <div>
+        return <div className="pageBody1">
             <Title username={this.props.username}/>
             <h2 className="title1"><span className="glyphicon glyphicon-align-justify" aria-hidden="true"></span> 演出计划</h2>
             <div>

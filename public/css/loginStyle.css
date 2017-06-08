@@ -48,3 +48,12 @@
     font-size:35px;
     margin-left: 120px;
 }
+
+.helloTitle
+{
+    width: 400px;
+    line-height: 80px;
+    font-family: "Microsoft YaHei";
+    float: left;
+
+}

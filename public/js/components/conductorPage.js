@@ -41,6 +41,7 @@ export default class ConductorPage extends React.Component {
             this.props.getPlayList();
         }
     }
+
     render() {
 
         //film:[{filmName:,duration,type,director,language}...]
@@ -61,7 +62,7 @@ export default class ConductorPage extends React.Component {
         });
 
 
-        return <div>
+        return <div className="pageBody1">
             <Title username={this.props.location.query.emp_id}/>
             <div>
                 <input  className="search" type="text" placeholder="请输入影片名"/>
@@ -79,7 +80,6 @@ export default class ConductorPage extends React.Component {
                 {playList}
             </div>
             <div className={this.state.returnTicketClassName}>
-
                     <input type="text" ref="returnInput" placeholder="请输入票ID" className="inputId"/><br/>
                     <input type="button" value="确认退票" onClick={this.confirmReturn.bind(this)} className="returnBtn"/>
 
@@ -87,6 +87,6 @@ export default class ConductorPage extends React.Component {
             </div>
             <div className={this.state.shade}>
             </div>
-        </div>
+                </div>
     }
 }

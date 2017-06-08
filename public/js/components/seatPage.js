@@ -76,7 +76,7 @@ export default class ConductorPage extends React.Component {
            </div>
         });
 
-        return <div>
+        return <div className="pageBody1">
             <Title username={this.props.username}/>
             <div className="seatMainView">
                 <div className="screen">银幕</div>

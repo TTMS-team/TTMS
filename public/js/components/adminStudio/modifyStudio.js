@@ -87,10 +87,10 @@ export default class ModifyStudio extends React.Component {
                     <label className="studioLab1">演出厅名称</label><input className="studioInput2" type="text" value={name} ref="studio_name" onChange={this.onchangeName.bind(this)}/>
                 </div>
                 <div className="colStyle">
-                    <label className="studioLab1">座位行数</label><input className="studioInput2"  type="text" value={row} ref="studio_row" onChange={this.onchangeRow.bind(this)}/>
+                    <label className="studioLab1">座位行数</label><input disabled="disabled" className="studioInput2"  type="text" value={row} ref="studio_row" onChange={this.onchangeRow.bind(this)}/>
                 </div>
                 <div className="colStyle">
-                    <label  className="studioLab1">座位列数</label><input className="studioInput2"  type="text" value={col} ref="studio_col" onChange={this.onchangeCol.bind(this)}/>
+                    <label  className="studioLab1">座位列数</label><input disabled="disabled" className="studioInput2"  type="text" value={col} ref="studio_col" onChange={this.onchangeCol.bind(this)}/>
                 </div>
                 <div className="colStyle">
                     <label   className="studioLab1">演出厅是否可用</label><input className="studioInput2" type="text" ref="ava" value={ava} onChange={this.onchangeAva.bind(this)}/>

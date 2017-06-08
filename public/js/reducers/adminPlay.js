@@ -1,9 +1,10 @@
-export default (state = {playList:[],deleteTip:false,addPlayTip: false,updatePlayTip:false}, action) => {
+export default (state = {returnTip:false,playList:[],deleteTip:false,addPlayTip: false,updatePlayTip:false}, action) => {
     if(action.type === "SHOW_PLAY_LIST") {
         // console.log(action.data)
         state.addPlayTip=false;
         state.deleteTip=false;
         state.updatePlayTip=false;
+        state.returnTip=false;
         state.playList = action.data;
         return Object.assign({}, state);
     }else if(action.type==="GET_DELETE_PLAY_RESULT"){
@@ -14,6 +15,9 @@ export default (state = {playList:[],deleteTip:false,addPlayTip: false,updatePla
         return Object.assign({}, state);
     }else if(action.type==="GET_UPDATE_PLAY_TIP"){
         state.updatePlayTip = action.data;
+        return Object.assign({}, state);
+    }else if(action.type === "GET_RETURN_TICKET_TIP") {
+        state.returnTip = action.data;
         return Object.assign({}, state);
     }
     return state;

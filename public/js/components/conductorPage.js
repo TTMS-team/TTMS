@@ -6,6 +6,13 @@ import Title from './title';
 import {browserHistory} from 'react-router';
 
 export default class ConductorPage extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={
+            returnTicketClassName:"returnTicket",
+            shade:"shade"
+        }
+    }
     componentWillMount() {
         this.props.getPlayList();
     }
@@ -13,11 +20,31 @@ export default class ConductorPage extends React.Component {
         browserHistory.push(`/schedulePage?id=${play_id}`);
 
     }
+    onReturnTicket(){
+        this.setState({
+            returnTicketClassName:"returnTicket1",
+            shade:"shade1"
+        })
+    }
+    confirmReturn(){
+        var input=this.refs.returnInput.value;
+        this.props.confirmReturn(input);
+    }
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.returnTip){
+            this.setState({
+                returnTicketClassName:"returnTicket",
+                shade:"shade"
 
+            })
+            alert("退票成功！");
+            this.props.getPlayList();
+        }
+    }
     render() {
 
         //film:[{filmName:,duration,type,director,language}...]
-        
+
 
         var playList=this.props.playList.map((value,key)=>{
             return <div >
@@ -39,7 +66,7 @@ export default class ConductorPage extends React.Component {
             <div>
                 <input  className="search" type="text" placeholder="请输入影片名"/>
                 <button className="searchButton glyphicon glyphicon-search"> 查找</button>
-                <button className="searchButton">退票</button>
+                <button className="searchButton" onClick={this.onReturnTicket.bind(this)}>退票</button>
             </div>
             <div className="mainView1">
                 <div>
@@ -50,6 +77,15 @@ export default class ConductorPage extends React.Component {
                     <span className="conductorSpan">剧目票价</span>
                 </div>
                 {playList}
+            </div>
+            <div className={this.state.returnTicketClassName}>
+
+                    <input type="text" ref="returnInput" placeholder="请输入票ID" className="inputId"/><br/>
+                    <input type="button" value="确认退票" onClick={this.confirmReturn.bind(this)} className="returnBtn"/>
+
+
+            </div>
+            <div className={this.state.shade}>
             </div>
         </div>
     }

@@ -568,7 +568,14 @@ app.get("/getSchedule/:id",function (req,res) {
 app.get("/getSeatsList/:id",function (req,res) {
     var studio_id=req.params.id;
     res.json([])
-})
+});
+
+
+app.get("/returnTicket/:id",function (req,res) {
+    var ticket_id=req.params.id;
+    console.log(ticket_id)
+    res.json("true");
+});
 
 app.get("*", function (req, res) {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
@@ -577,3 +584,4 @@ app.get("*", function (req, res) {
 app.listen(3000,()=>{
     console.log("server start success listen at port 3000")
 });
+

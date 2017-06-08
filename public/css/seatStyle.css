@@ -2,20 +2,34 @@
 {
     border:2px solid #a1a1a1;
     width: 70%;
-    height: 80px;
+    height: 50px;
     margin-left: 15%;
-    color: #bbbbbb;
     margin-top: 10px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    /*font-weight: bolder;*/
+    border-radius: 5px;
+    color:black;
+    background-color: gainsboro;
 }
 .seatMainView
 {
-    border:2px solid #a1a1a1;
+    /*border:2px solid #a1a1a1;*/
     width: 70%;
+    /*padding: 20px;*/
     height: 600px;
     margin-left: 5%;
     float: left;
     color: #bbbbbb;
     margin-top: 10px;
+    position: relative;
+}
+.seat{
+    position: absolute;
+    left:50%;
+    transform: translate(-50%,0px);
+
 }
 .seatView
 {
@@ -36,16 +50,16 @@
     float: right;
     overflow-y: scroll;
 }
-.seatSpan
-{
-    width: 50px;
-    height: 30px;
-    margin-left: 30px;
-    text-align: center;
-    display:-moz-inline-box;
-    display:inline-block;
-    color: #009926;
-}
+/*.seatSpan*/
+/*{*/
+    /*width: 50px;*/
+    /*height: 30px;*/
+    /*margin-left: 30px;*/
+    /*text-align: center;*/
+    /*display:-moz-inline-box;*/
+    /*display:inline-block;*/
+    /*color: #009926;*/
+/*}*/
 .seatSpani
 {
     margin-left: 30px;
@@ -98,4 +112,27 @@
     font-size: large;
     margin-left: 30%;
     margin-top: 5px;
+}
+.seatSpan{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+
+    text-align: center;
+    line-height: 30px;
+    color:black ;
+}
+.seatSpan1{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+
+    text-align: center;
+    line-height: 30px;
+    color:black;
+}
+.index{
+    color: black;
 }

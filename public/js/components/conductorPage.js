@@ -41,6 +41,9 @@ export default class ConductorPage extends React.Component {
             this.props.getPlayList();
         }
     }
+    logout(){
+        browserHistory.push("/");
+    }
 
     render() {
 
@@ -63,6 +66,8 @@ export default class ConductorPage extends React.Component {
 
 
         return <div className="pageBody1">
+            <button className="logout" onClick={this.logout.bind(this)}>登出</button>
+
             <Title username={this.props.location.query.emp_id}/>
             <div>
                 <input  className="search" type="text" placeholder="请输入影片名"/>

@@ -41,8 +41,7 @@ export default class Schedule extends React.Component {
                     <span className="scheduleSpan3">{value.sched_ticket_price}</span>
                     <span className="scheduleSpan1">{value.sched_time}</span>
                     <span className="scheduleSpan4">{value.studio_id}</span>
-                    <input type="button"  className="scheduleButton" value="修改"  onClick={this.modifySchedule.bind(this,value.sched_id)}/>
-                    <button className="scheduleButton1 glyphicon glyphicon-trash" value="删除" onClick={this.deleteSchedule.bind(this,value.sched_id)}/>
+                    <button className="scheduleButton glyphicon glyphicon-trash" value="删除" onClick={this.deleteSchedule.bind(this,value.sched_id)}/>
                 </div>
             </div>
         });
